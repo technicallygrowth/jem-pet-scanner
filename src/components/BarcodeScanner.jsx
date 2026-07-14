@@ -25,11 +25,16 @@ export default function BarcodeScanner() {
   const [errorKey, setErrorKey] = useState(null);
   const [barcode, setBarcode] = useState(null);
   const [usingFallback, setUsingFallback] = useState(false);
+  // TEMPORARY diagnostic readout — remove once iOS decoding is confirmed
+  // working. Lets us see what's happening frame-by-frame without a Mac to
+  // plug the iPhone into for its console.
+  const [debugText, setDebugText] = useState('');
 
   const videoRef = useRef(null);
   const streamRef = useRef(null);
   const rafRef = useRef(null);
   const html5QrcodeRef = useRef(null);
+  const debugFrameRef = useRef(0);
 
   const stopNativeScan = useCallback(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -70,6 +75,8 @@ export default function BarcodeScanner() {
 
   const startFallbackScan = useCallback(async () => {
     setUsingFallback(true);
+    debugFrameRef.current = 0;
+    setDebugText('starting…');
     const { Html5Qrcode, Html5QrcodeSupportedFormats } = await import('html5-qrcode');
     // html5-qrcode's formatsToSupport takes its own numeric enum, not plain
     // format-name strings — passing strings silently matches zero formats,
@@ -98,8 +105,16 @@ export default function BarcodeScanner() {
         },
       },
       (decodedText) => handleDetected(decodedText),
-      () => {
-        // Per-frame "nothing found" callback — expected on most frames, ignore.
+      (errorMessage) => {
+        // Per-frame "nothing found" callback — fires constantly and is
+        // normally safe to ignore, but we sample it into debugText below
+        // so we can see on-device whether frames are even being read.
+        debugFrameRef.current += 1;
+        if (debugFrameRef.current % 10 === 0) {
+          const videoEl = document.querySelector(`#${FALLBACK_CONTAINER_ID} video`);
+          const dims = videoEl ? `${videoEl.videoWidth}x${videoEl.videoHeight}` : 'no <video>';
+          setDebugText(`frames: ${debugFrameRef.current} · video: ${dims} · last: ${String(errorMessage).slice(0, 70)}`);
+        }
       },
     );
     setStatus('scanning');
@@ -213,6 +228,7 @@ export default function BarcodeScanner() {
           <p className="scanner__hint">{t('scanner.pointAtBarcode')}</p>
           <p className="scanner__tip">{t('scanner.distanceHint')}</p>
           {usingFallback && <p className="scanner__badge">{t('scanner.usingFallback')}</p>}
+          {usingFallback && <p className="scanner__debug">{debugText}</p>}
           <button type="button" className="scanner__secondary-button" onClick={reset}>
             {t('scanner.stopButton')}
           </button>

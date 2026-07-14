@@ -44,6 +44,17 @@
   margin: 0;
 }
 
+.scanner__debug {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: var(--color-charcoal);
+  opacity: 0.6;
+  text-align: center;
+  margin: 0;
+  word-break: break-all;
+  max-width: 90vw;
+}
+
 .scanner__badge {
   font-size: 0.8rem;
   color: var(--color-charcoal);
