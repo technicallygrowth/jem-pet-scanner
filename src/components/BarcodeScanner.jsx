@@ -103,6 +103,14 @@ export default function BarcodeScanner() {
           const edge = Math.min(viewfinderWidth, viewfinderHeight);
           return { width: Math.floor(edge * 0.75), height: Math.floor(edge * 0.4) };
         },
+        // Without this, iOS Safari defaults to a very low-res feed
+        // (480x640) — too few pixels across each barcode bar to ever
+        // decode. Requesting a higher resolution explicitly fixes that.
+        videoConstraints: {
+          facingMode: 'environment',
+          width: { ideal: 1920 },
+          height: { ideal: 1080 },
+        },
       },
       (decodedText) => handleDetected(decodedText),
       (errorMessage) => {
