@@ -29,6 +29,7 @@ export default function BarcodeScanner() {
   // working. Lets us see what's happening frame-by-frame without a Mac to
   // plug the iPhone into for its console.
   const [debugText, setDebugText] = useState('');
+  const [grantedInfo, setGrantedInfo] = useState('');
 
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -77,6 +78,7 @@ export default function BarcodeScanner() {
     setUsingFallback(true);
     debugFrameRef.current = 0;
     setDebugText('starting…');
+    setGrantedInfo('');
     const { Html5Qrcode, Html5QrcodeSupportedFormats } = await import('html5-qrcode');
     // html5-qrcode's formatsToSupport takes its own numeric enum, not plain
     // format-name strings — passing strings silently matches zero formats,
@@ -126,6 +128,15 @@ export default function BarcodeScanner() {
       },
     );
     setStatus('scanning');
+    // Read back what the browser actually granted (separate from the DOM
+    // video element, which can lag) so we can confirm whether our
+    // resolution request was honored at all.
+    try {
+      const settings = instance.getRunningTrackSettings();
+      setGrantedInfo(`granted: ${settings.width}x${settings.height} · facing: ${settings.facingMode ?? 'n/a'}`);
+    } catch {
+      // Not fatal — the per-frame debug text below will still populate.
+    }
   }, [handleDetected]);
 
   const runNativeDetectionLoop = useCallback(
@@ -236,6 +247,7 @@ export default function BarcodeScanner() {
           <p className="scanner__hint">{t('scanner.pointAtBarcode')}</p>
           <p className="scanner__tip">{t('scanner.distanceHint')}</p>
           {usingFallback && <p className="scanner__badge">{t('scanner.usingFallback')}</p>}
+          {usingFallback && grantedInfo && <p className="scanner__debug">{grantedInfo}</p>}
           {usingFallback && <p className="scanner__debug">{debugText}</p>}
           <button type="button" className="scanner__secondary-button" onClick={reset}>
             {t('scanner.stopButton')}
