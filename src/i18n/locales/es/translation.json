@@ -8,6 +8,7 @@
     "stopButton": "Detener escaneo",
     "scanAgainButton": "Escanear de nuevo",
     "pointAtBarcode": "Apunta la cámara al código de barras",
+    "distanceHint": "Sostén el código plano, a unos 15–25 cm de distancia, con buena luz",
     "requestingCamera": "Solicitando acceso a la cámara…",
     "detectedLabel": "Código detectado",
     "permissionDeniedTitle": "Se necesita acceso a la cámara",

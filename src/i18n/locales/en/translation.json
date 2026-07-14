@@ -8,6 +8,7 @@
     "stopButton": "Stop scanning",
     "scanAgainButton": "Scan again",
     "pointAtBarcode": "Point your camera at the barcode",
+    "distanceHint": "Hold the barcode flat, about 6–10 in (15–25 cm) away, in good light",
     "requestingCamera": "Requesting camera access…",
     "detectedLabel": "Barcode detected",
     "permissionDeniedTitle": "Camera access needed",

@@ -36,6 +36,14 @@
   margin: 0;
 }
 
+.scanner__tip {
+  color: var(--color-charcoal);
+  font-size: 0.85rem;
+  opacity: 0.75;
+  text-align: center;
+  margin: 0;
+}
+
 .scanner__badge {
   font-size: 0.8rem;
   color: var(--color-charcoal);
