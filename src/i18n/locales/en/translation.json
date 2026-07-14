@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "Jem Pet Scanner",
+    "tagline": "Scan a pet-food barcode to see what's inside"
+  },
+  "scanner": {
+    "startButton": "Scan a barcode",
+    "stopButton": "Stop scanning",
+    "scanAgainButton": "Scan again",
+    "pointAtBarcode": "Point your camera at the barcode",
+    "requestingCamera": "Requesting camera access…",
+    "detectedLabel": "Barcode detected",
+    "permissionDeniedTitle": "Camera access needed",
+    "permissionDeniedBody": "This scanner needs permission to use your camera. Please allow camera access in your browser settings and try again.",
+    "noCameraTitle": "No camera found",
+    "noCameraBody": "We couldn't find a camera on this device.",
+    "notSecureTitle": "Secure connection needed",
+    "notSecureBody": "Camera access only works over HTTPS. Please open this app using a secure (https://) link.",
+    "genericErrorTitle": "Something went wrong",
+    "genericErrorBody": "We couldn't start the scanner. Please try again.",
+    "usingFallback": "Using backup scanner"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "es": "Español"
+  }
+}

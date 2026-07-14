@@ -1,0 +1,34 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.app__title {
+  font-size: 1.4rem;
+  color: var(--color-magenta);
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 20px 48px;
+  text-align: center;
+}
+
+.app__tagline {
+  font-size: 1.05rem;
+  color: var(--color-charcoal);
+  max-width: 360px;
+}

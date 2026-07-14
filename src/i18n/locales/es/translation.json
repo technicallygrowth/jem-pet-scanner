@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "Jem Pet Scanner",
+    "tagline": "Escanea el código de barras de la comida de tu mascota"
+  },
+  "scanner": {
+    "startButton": "Escanear código de barras",
+    "stopButton": "Detener escaneo",
+    "scanAgainButton": "Escanear de nuevo",
+    "pointAtBarcode": "Apunta la cámara al código de barras",
+    "requestingCamera": "Solicitando acceso a la cámara…",
+    "detectedLabel": "Código detectado",
+    "permissionDeniedTitle": "Se necesita acceso a la cámara",
+    "permissionDeniedBody": "Este escáner necesita permiso para usar tu cámara. Permite el acceso a la cámara en la configuración de tu navegador e intenta de nuevo.",
+    "noCameraTitle": "No se encontró cámara",
+    "noCameraBody": "No pudimos encontrar una cámara en este dispositivo.",
+    "notSecureTitle": "Se necesita conexión segura",
+    "notSecureBody": "El acceso a la cámara solo funciona con HTTPS. Abre esta app usando un enlace seguro (https://).",
+    "genericErrorTitle": "Algo salió mal",
+    "genericErrorBody": "No pudimos iniciar el escáner. Intenta de nuevo.",
+    "usingFallback": "Usando escáner de respaldo"
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español"
+  }
+}
