@@ -1,0 +1,197 @@
+{
+  "_readme": "Starting-point brand table from docs/rubrica-v1-y-datos.md section 2. NONE of this has gone through the actual WSAVA questionnaire with each brand or a vet-nutritionist review yet — every entry is illustrative until that happens (see docs/rubrica-v1-y-datos.md section 4). Do not remove the 'illustrative' confidence tier without that verification step.",
+  "brands": [
+    {
+      "id": "purina-proplan",
+      "name": "Purina Pro Plan / ONE",
+      "aliases": ["purina pro plan", "pro plan", "purina one", "purina"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": true },
+      "confidence": "documented",
+      "evidence": {
+        "en": "Purina Pro Plan is one of the brands most consistently backed by veterinary sources: it employs board-certified veterinary nutritionists, runs AAFCO feeding trials, owns and controls its own manufacturing plants, and publishes peer-reviewed research.",
+        "es": "Purina Pro Plan es una de las marcas más respaldadas de forma consistente por fuentes veterinarias: emplea nutriólogos veterinarios certificados, hace pruebas de alimentación AAFCO, tiene y controla sus propias fábricas, y publica investigación revisada por pares."
+      }
+    },
+    {
+      "id": "hills",
+      "name": "Hill's Science Diet / Prescription Diet",
+      "aliases": ["hill's science diet", "hill's prescription diet", "hills science diet", "hills prescription diet", "science diet", "prescription diet", "hill's", "hills", "hill"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": true },
+      "confidence": "documented",
+      "evidence": {
+        "en": "Hill's is widely recommended in veterinary clinics and meets the same criteria: veterinary nutritionists on staff, feeding trials, company-owned manufacturing, and published research.",
+        "es": "Hill's es muy recomendada en clínicas veterinarias y cumple los mismos criterios: nutriólogos veterinarios en plantilla, pruebas de alimentación, fábricas propias, e investigación publicada."
+      }
+    },
+    {
+      "id": "royal-canin",
+      "name": "Royal Canin",
+      "aliases": ["royal canin"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": true },
+      "confidence": "documented",
+      "evidence": {
+        "en": "Royal Canin meets the same veterinary-backed criteria and is particularly strong in breed- and condition-specific diets.",
+        "es": "Royal Canin cumple los mismos criterios respaldados por veterinarios y es particularmente fuerte en dietas específicas por raza y condición."
+      }
+    },
+    {
+      "id": "iams",
+      "name": "Iams",
+      "aliases": ["iams"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": true },
+      "confidence": "documented",
+      "evidence": {
+        "en": "Iams meets all five WSAVA-aligned criteria: veterinary nutritionists, feeding trials, owned manufacturing, published research, and a good recall track record.",
+        "es": "Iams cumple los cinco criterios alineados con WSAVA: nutriólogos veterinarios, pruebas de alimentación, fábricas propias, investigación publicada, y buen historial de retiros."
+      }
+    },
+    {
+      "id": "eukanuba",
+      "name": "Eukanuba",
+      "aliases": ["eukanuba"],
+      "species": ["dog"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": true },
+      "confidence": "documented",
+      "evidence": {
+        "en": "Eukanuba meets all five WSAVA-aligned criteria, the same as its sibling brand Iams.",
+        "es": "Eukanuba cumple los cinco criterios alineados con WSAVA, igual que su marca hermana Iams."
+      }
+    },
+    {
+      "id": "just-food-for-dogs",
+      "name": "Just Food For Dogs",
+      "aliases": ["just food for dogs", "jffd"],
+      "species": ["dog"],
+      "wsava": { "overall": "met", "allFiveCriteriaMet": null },
+      "confidence": "documented",
+      "evidence": {
+        "en": "A fresh-food brand frequently recommended by veterinarians and involving veterinary nutritionists in formulation, though we haven't independently confirmed every WSAVA criterion yet.",
+        "es": "Una marca de comida fresca frecuentemente recomendada por veterinarios, con nutriólogos veterinarios involucrados en la formulación, aunque todavía no hemos confirmado cada criterio de WSAVA de forma independiente."
+      }
+    },
+    {
+      "id": "blue-buffalo",
+      "name": "Blue Buffalo",
+      "aliases": ["blue buffalo", "blue wilderness", "blue basics", "blue freedom"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "partial", "allFiveCriteriaMet": false },
+      "confidence": "contested",
+      "evidence": {
+        "en": "Blue Buffalo formulates to meet AAFCO nutrient profiles, but doesn't meet all of the WSAVA manufacturer criteria (such as owning its own plants). Some grain-free lines have appeared in reports discussing a possible link to canine dilated cardiomyopathy (DCM); this is an active area of research, not a confirmed recall.",
+        "es": "Blue Buffalo formula para cumplir los perfiles de nutrientes de AAFCO, pero no cumple todos los criterios de fabricante de WSAVA (como tener fábricas propias). Algunas líneas sin grano han aparecido en reportes que discuten una posible relación con cardiomiopatía dilatada canina (DCM); es un área de investigación activa, no un retiro confirmado."
+      }
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness",
+      "aliases": ["wellness core", "wellness complete health", "wellness pet food"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "partial", "allFiveCriteriaMet": null },
+      "confidence": "contested",
+      "evidence": {
+        "en": "Wellness appears on some published WSAVA-criteria lists but not others — public sources disagree, so we're treating this as unverified rather than guessing.",
+        "es": "Wellness aparece en algunas listas publicadas de criterios WSAVA pero no en otras — las fuentes públicas no coinciden, así que lo tratamos como sin verificar en vez de adivinar."
+      }
+    },
+    {
+      "id": "orijen",
+      "name": "Orijen",
+      "aliases": ["orijen"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "partial", "allFiveCriteriaMet": false },
+      "confidence": "contested",
+      "evidence": {
+        "en": "A popular premium/boutique brand, but it doesn't meet all of WSAVA's manufacturer-side criteria (such as company-run feeding trials and owned plants).",
+        "es": "Una marca premium/boutique popular, pero no cumple todos los criterios de fabricante de WSAVA (como pruebas de alimentación propias y fábricas propias)."
+      }
+    },
+    {
+      "id": "acana",
+      "name": "Acana",
+      "aliases": ["acana"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "partial", "allFiveCriteriaMet": false },
+      "confidence": "contested",
+      "evidence": {
+        "en": "Sibling brand to Orijen (same manufacturer, Champion Petfoods) with the same gaps against WSAVA's manufacturer-side criteria.",
+        "es": "Marca hermana de Orijen (mismo fabricante, Champion Petfoods) con los mismos vacíos frente a los criterios de fabricante de WSAVA."
+      }
+    },
+    {
+      "id": "taste-of-the-wild",
+      "name": "Taste of the Wild",
+      "aliases": ["taste of the wild", "totw"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "none", "allFiveCriteriaMet": false },
+      "confidence": "contested",
+      "evidence": {
+        "en": "A grain-free/boutique brand that veterinary sources have flagged as not meeting key WSAVA criteria, and that has appeared in reports discussing DCM cases.",
+        "es": "Una marca boutique sin grano que fuentes veterinarias han señalado como que no cumple criterios clave de WSAVA, y que ha aparecido en reportes que discuten casos de DCM."
+      }
+    },
+    {
+      "id": "merrick",
+      "name": "Merrick",
+      "aliases": ["merrick"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "unevaluated", "allFiveCriteriaMet": null },
+      "confidence": "unevaluated",
+      "evidence": {
+        "en": "We haven't evaluated this brand against WSAVA/AAFCO criteria yet.",
+        "es": "Todavía no hemos evaluado esta marca contra los criterios de WSAVA/AAFCO."
+      }
+    },
+    {
+      "id": "canidae",
+      "name": "Canidae",
+      "aliases": ["canidae"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "unevaluated", "allFiveCriteriaMet": null },
+      "confidence": "unevaluated",
+      "evidence": {
+        "en": "We haven't evaluated this brand against WSAVA/AAFCO criteria yet.",
+        "es": "Todavía no hemos evaluado esta marca contra los criterios de WSAVA/AAFCO."
+      }
+    },
+    {
+      "id": "nulo",
+      "name": "Nulo",
+      "aliases": ["nulo"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "unevaluated", "allFiveCriteriaMet": null },
+      "confidence": "unevaluated",
+      "evidence": {
+        "en": "We haven't evaluated this brand against WSAVA/AAFCO criteria yet.",
+        "es": "Todavía no hemos evaluado esta marca contra los criterios de WSAVA/AAFCO."
+      }
+    },
+    {
+      "id": "stella-and-chewys",
+      "name": "Stella & Chewy's",
+      "aliases": ["stella & chewy's", "stella and chewy's", "stella chewy"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "unevaluated", "allFiveCriteriaMet": null },
+      "confidence": "unevaluated",
+      "evidence": {
+        "en": "We haven't evaluated this brand against WSAVA/AAFCO criteria yet.",
+        "es": "Todavía no hemos evaluado esta marca contra los criterios de WSAVA/AAFCO."
+      }
+    },
+    {
+      "id": "open-farm",
+      "name": "Open Farm",
+      "aliases": ["open farm"],
+      "species": ["dog", "cat"],
+      "wsava": { "overall": "unevaluated", "allFiveCriteriaMet": null },
+      "confidence": "unevaluated",
+      "evidence": {
+        "en": "We haven't evaluated this brand against WSAVA/AAFCO criteria yet.",
+        "es": "Todavía no hemos evaluado esta marca contra los criterios de WSAVA/AAFCO."
+      }
+    }
+  ]
+}

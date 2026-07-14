@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import AnalysisResult from './AnalysisResult';
 import './BarcodeScanner.css';
 
 // 1D product barcode formats we care about for pet food packaging.
@@ -227,15 +228,7 @@ export default function BarcodeScanner() {
         </>
       )}
 
-      {status === 'detected' && (
-        <div className="scanner__result">
-          <span className="scanner__result-label">{t('scanner.detectedLabel')}</span>
-          <span className="scanner__result-value">{barcode}</span>
-          <button type="button" className="scanner__primary-button" onClick={startScanning}>
-            {t('scanner.scanAgainButton')}
-          </button>
-        </div>
-      )}
+      {status === 'detected' && <AnalysisResult barcode={barcode} onScanAgain={startScanning} />}
 
       {status === 'error' && (
         <div className="scanner__error">

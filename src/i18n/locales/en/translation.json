@@ -25,5 +25,28 @@
     "label": "Language",
     "en": "English",
     "es": "Español"
+  },
+  "analysis": {
+    "loading": "Looking up this product…",
+    "illustrative": "Illustrative — this brand hasn't been confirmed with a veterinary nutritionist yet. Treat it as a starting point, not a final word.",
+    "productNotFoundTitle": "We don't have data for this product yet",
+    "productNotFoundBody": "This barcode isn't in the open product database we check. As more people scan, we'll be able to recognize more products.",
+    "brandNotFoundTitle": "Brand not yet analyzed",
+    "brandNotFoundBody": "We found the product, but haven't evaluated its brand against our criteria yet.",
+    "layer1Title": "Quick facts",
+    "layer2Title": "What the evidence says",
+    "signals": {
+      "completeBalanced": "Complete & balanced for this life stage",
+      "wsava": "Brand meets veterinary (WSAVA) criteria",
+      "feedingTrials": "Backed by real feeding trials",
+      "dyes": "Contains artificial dyes or flavors",
+      "recalls": "Recent recalls"
+    },
+    "states": {
+      "met": "Yes",
+      "partial": "Partial",
+      "none": "No",
+      "missing": "No data yet"
+    }
   }
 }

@@ -1,0 +1,45 @@
+.signal-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+}
+
+.signal-badge__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.signal-badge__text {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+}
+
+.signal-badge--met .signal-badge__icon {
+  background: #2e9e5b;
+}
+
+.signal-badge--partial .signal-badge__icon {
+  background: #f5a623;
+}
+
+.signal-badge--missing .signal-badge__icon {
+  background: #9aa0a6;
+}
+
+.signal-badge--none .signal-badge__icon {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}

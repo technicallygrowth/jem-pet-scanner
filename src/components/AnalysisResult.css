@@ -1,0 +1,99 @@
+.analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+  text-align: left;
+}
+
+.analysis__hint {
+  color: var(--color-charcoal);
+  text-align: center;
+}
+
+.analysis__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.analysis__product-image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.analysis__brand-name {
+  font-size: 1.2rem;
+  color: var(--color-magenta);
+}
+
+.analysis__product-name {
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.analysis__illustrative-banner {
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+.analysis__layer-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  margin: 0 0 10px;
+}
+
+.analysis__badges {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analysis__evidence-text {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+  margin: 0;
+}
+
+.analysis__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.analysis__empty h2 {
+  font-size: 1.1rem;
+  color: var(--color-magenta);
+}
+
+.analysis__empty p {
+  margin: 0;
+  color: var(--color-charcoal);
+}
+
+.analysis__barcode {
+  font-family: monospace;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}

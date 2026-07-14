@@ -25,5 +25,28 @@
     "label": "Idioma",
     "en": "English",
     "es": "Español"
+  },
+  "analysis": {
+    "loading": "Buscando este producto…",
+    "illustrative": "Ilustrativo — esta marca todavía no ha sido confirmada con un nutriólogo veterinario. Tómalo como punto de partida, no como palabra final.",
+    "productNotFoundTitle": "Todavía no tenemos datos de este producto",
+    "productNotFoundBody": "Este código no está en la base de datos abierta que consultamos. Conforme más gente escanee, vamos a reconocer más productos.",
+    "brandNotFoundTitle": "Marca aún no analizada",
+    "brandNotFoundBody": "Encontramos el producto, pero todavía no hemos evaluado su marca contra nuestros criterios.",
+    "layer1Title": "Orientación rápida",
+    "layer2Title": "Qué dice la evidencia",
+    "signals": {
+      "completeBalanced": "Completo y balanceado para esta etapa de vida",
+      "wsava": "La marca cumple criterios veterinarios (WSAVA)",
+      "feedingTrials": "Respaldado por pruebas de alimentación reales",
+      "dyes": "Contiene colorantes o saborizantes artificiales",
+      "recalls": "Retiros recientes"
+    },
+    "states": {
+      "met": "Sí",
+      "partial": "Parcial",
+      "none": "No",
+      "missing": "Sin dato"
+    }
   }
 }
