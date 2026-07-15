@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PetAvatar from './PetAvatar';
 import BarcodeScanner from './BarcodeScanner';
+import Methodology from './Methodology';
 import { useScanHistory } from '../hooks/useScanHistory';
 import './Dashboard.css';
 
@@ -17,9 +18,14 @@ export default function Dashboard({ pet, onEditPet }) {
   const { t } = useTranslation();
   const { history, addEntry } = useScanHistory();
   const [openBarcode, setOpenBarcode] = useState(null);
+  const [showMethodology, setShowMethodology] = useState(false);
 
   function handleAnalysisResult(result) {
     addEntry(result);
+  }
+
+  if (showMethodology) {
+    return <Methodology onBack={() => setShowMethodology(false)} />;
   }
 
   return (
@@ -78,9 +84,14 @@ export default function Dashboard({ pet, onEditPet }) {
         </section>
       )}
 
-      <button type="button" className="dashboard__edit" onClick={onEditPet}>
-        {t('dashboard.editPet')}
-      </button>
+      <div className="dashboard__footer-links">
+        <button type="button" className="dashboard__edit" onClick={() => setShowMethodology(true)}>
+          {t('dashboard.methodologyLink')}
+        </button>
+        <button type="button" className="dashboard__edit" onClick={onEditPet}>
+          {t('dashboard.editPet')}
+        </button>
+      </div>
     </div>
   );
 }

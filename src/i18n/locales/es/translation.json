@@ -105,6 +105,25 @@
       "analyzed": "Analizado",
       "brand-unknown": "Marca no encontrada",
       "not-found": "Sin datos"
-    }
+    },
+    "methodologyLink": "Cómo analizamos"
+  },
+  "methodology": {
+    "title": "Cómo analizamos",
+    "backButton": "Atrás",
+    "philosophyTitle": "Explicar, no juzgar",
+    "philosophyBody": "No le damos a la comida de mascota una calificación buena/mala ni un número único. Una marca o una lista de ingredientes no cuenta toda la historia, y un solo número esconde el matiz que realmente importa. En vez de eso te mostramos hechos verificables y lo que dice la evidencia veterinaria sobre ellos — tú decides con esa información, no con un veredicto nuestro.",
+    "layer1Title": "Capa 1 — Orientación rápida",
+    "layer1Body": "Un puñado de hechos sí/parcial/no, pensados para leerse en segundos: si la marca cumple criterios alineados con WSAVA, si está respaldada por pruebas de alimentación reales, si el producto contiene colorantes artificiales, y si ha tenido retiros recientes. Son hechos, no un juicio moral — una señal gris solo significa que no tenemos ese dato todavía, no que algo esté mal.",
+    "layer2Title": "Capa 2 — Qué dice la evidencia",
+    "layer2Body": "Un párrafo en lenguaje simple que explica qué significan en la práctica las credenciales veterinarias de una marca, basado en nuestra tabla de evaluación de marcas (ver abajo). Siempre citamos en qué se basa.",
+    "layer3Title": "Capa 3 — Creencias comunes vs. evidencia",
+    "layer3Body": "Algunos ingredientes (subproductos, granos) tienen mala fama que los nutriólogos veterinarios no respaldan. Mostramos la creencia común y la evidencia lado a lado, dándole siempre más peso a la evidencia — nunca tratamos una creencia popular como igual de confiable que la ciencia.",
+    "dataSourcesTitle": "De dónde vienen los datos",
+    "dataSourcesBody": "La identificación del producto viene de Open Pet Food Facts, una base de datos gratuita mantenida por la comunidad — su cobertura es despareja, sobre todo fuera de Europa, así que muchos productos (en especial marcas latinoamericanas) todavía no se van a encontrar. Las evaluaciones a nivel marca (Capas 1–2) vienen de nuestra propia tabla curada, construida con fuentes públicas y las guías globales de nutrición de WSAVA.",
+    "verificationTitle": "Estado de verificación — por favor lee esto",
+    "verificationBody": "Todas las marcas que se muestran hoy están marcadas como \"ilustrativo\": ninguna ha sido confirmada todavía con el cuestionario oficial de WSAVA ni revisada por un nutriólogo veterinario. Trata las evaluaciones de hoy como un punto de partida que estamos validando activamente, no como la última palabra.",
+    "disclaimerTitle": "No es consejo veterinario",
+    "disclaimerBody": "Esta app da información general para ayudarte a entender las etiquetas de comida de mascota y los estándares de la industria. No sustituye el consejo de tu veterinario, que conoce las necesidades de salud específicas de tu mascota."
   }
 }

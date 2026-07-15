@@ -129,6 +129,12 @@
   opacity: 0.65;
 }
 
+.dashboard__footer-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
 .dashboard__edit {
   background: transparent;
   border: none;
@@ -139,5 +145,4 @@
   padding: 4px 12px;
   cursor: pointer;
   text-decoration: underline;
-  margin-top: 8px;
 }

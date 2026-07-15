@@ -105,6 +105,25 @@
       "analyzed": "Analyzed",
       "brand-unknown": "Brand not found",
       "not-found": "No data"
-    }
+    },
+    "methodologyLink": "How we analyze"
+  },
+  "methodology": {
+    "title": "How we analyze",
+    "backButton": "Back",
+    "philosophyTitle": "Explain, don't judge",
+    "philosophyBody": "We don't give pet food a good/bad score or a single number. A brand or ingredient list doesn't tell the whole story, and a single score hides the nuance that actually matters. Instead we show you verifiable facts and what veterinary evidence says about them — you decide with that information, not a verdict from us.",
+    "layer1Title": "Layer 1 — Quick facts",
+    "layer1Body": "A handful of yes/partial/no facts, meant to be read in a few seconds: whether the brand meets veterinary-aligned (WSAVA) criteria, whether it's backed by real feeding trials, whether the product contains artificial dyes, and whether there have been recent recalls. These are facts, not a moral judgment — a gray badge just means we don't have that data yet, not that something is wrong.",
+    "layer2Title": "Layer 2 — What the evidence says",
+    "layer2Body": "A plain-language paragraph explaining what a brand's veterinary credentials mean in practice, based on our brand evaluation table (see below). We always cite what it's based on.",
+    "layer3Title": "Layer 3 — Common beliefs vs. evidence",
+    "layer3Body": "Some ingredients (by-products, grains) have a bad reputation that veterinary nutritionists don't support. We show the common belief and the evidence side by side, with evidence always given more weight — we never treat a popular belief as equally reliable as the science.",
+    "dataSourcesTitle": "Where the data comes from",
+    "dataSourcesBody": "Product identification comes from Open Pet Food Facts, a free, community-maintained database — its coverage is uneven, especially outside Europe, so many products (particularly Latin American brands) won't be found yet. Brand-level evaluations (Layers 1–2) come from our own curated table, built from public sources and the WSAVA global nutrition guidelines.",
+    "verificationTitle": "Verification status — please read",
+    "verificationBody": "Every brand currently shown is marked \"illustrative\": none has been confirmed yet through the official WSAVA questionnaire or reviewed by a veterinary nutritionist. Treat today's evaluations as a starting point we're actively working to validate, not a final word.",
+    "disclaimerTitle": "Not veterinary advice",
+    "disclaimerBody": "This app provides general information to help you understand pet food labels and industry standards. It isn't a substitute for advice from your veterinarian, who knows your pet's specific health needs."
   }
 }

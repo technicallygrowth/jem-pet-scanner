@@ -1,0 +1,54 @@
+.methodology {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+.methodology__back {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 4px 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.methodology__title {
+  font-size: 1.3rem;
+  color: var(--color-magenta);
+  margin: 0;
+}
+
+.methodology__section {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.methodology__section h3 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--color-magenta);
+}
+
+.methodology__section p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-charcoal);
+}
+
+.methodology__section--flagged {
+  background: rgba(245, 166, 35, 0.18);
+}
+
+.methodology__section--disclaimer {
+  background: rgba(46, 42, 57, 0.06);
+}
