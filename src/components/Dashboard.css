@@ -101,7 +101,10 @@
   background: #2e9e5b;
 }
 
-.dashboard__history-icon--brand-unknown,
+.dashboard__history-icon--brand-unknown {
+  background: #f5a623;
+}
+
 .dashboard__history-icon--not-found {
   background: #9aa0a6;
 }

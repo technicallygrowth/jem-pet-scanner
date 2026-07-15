@@ -5,9 +5,11 @@ import BarcodeScanner from './BarcodeScanner';
 import { useScanHistory } from '../hooks/useScanHistory';
 import './Dashboard.css';
 
+// Matches SignalBadge's icon vocabulary: ✓ confirmed, ~ partial info,
+// ? nothing found at all.
 const OUTCOME_ICON = {
   analyzed: '✓',
-  'brand-unknown': '?',
+  'brand-unknown': '~',
   'not-found': '?',
 };
 
