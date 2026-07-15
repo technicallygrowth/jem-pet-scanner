@@ -20,12 +20,21 @@ function getNativeDetector() {
   return new window.BarcodeDetector({ formats: BARCODE_FORMATS });
 }
 
-export default function BarcodeScanner({ pet }) {
+export default function BarcodeScanner({ pet, onAnalysisResult, openBarcode, onOpenedBarcode }) {
   const { t } = useTranslation();
   const [status, setStatus] = useState('idle'); // idle | requesting | scanning | detected | error
   const [errorKey, setErrorKey] = useState(null);
   const [barcode, setBarcode] = useState(null);
   const [usingFallback, setUsingFallback] = useState(false);
+
+  // Lets the dashboard's scan history re-open a past result without going
+  // through the camera again.
+  useEffect(() => {
+    if (!openBarcode) return;
+    setBarcode(openBarcode);
+    setStatus('detected');
+    onOpenedBarcode?.();
+  }, [openBarcode, onOpenedBarcode]);
 
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -229,7 +238,12 @@ export default function BarcodeScanner({ pet }) {
       )}
 
       {status === 'detected' && (
-        <AnalysisResult barcode={barcode} pet={pet} onScanAgain={startScanning} />
+        <AnalysisResult
+          barcode={barcode}
+          pet={pet}
+          onScanAgain={startScanning}
+          onResult={onAnalysisResult}
+        />
       )}
 
       {status === 'error' && (

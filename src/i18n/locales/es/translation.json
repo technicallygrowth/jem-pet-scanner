@@ -95,6 +95,12 @@
   "dashboard": {
     "greeting": "¡Hola, {{name}}!",
     "prompt": "¿Revisamos qué tiene la comida de {{name}}?",
-    "editPet": "Cambiar mascota"
+    "editPet": "Cambiar mascota",
+    "historyTitle": "Escaneos recientes",
+    "historyOutcome": {
+      "analyzed": "Analizado",
+      "brand-unknown": "Marca no encontrada",
+      "not-found": "Sin datos"
+    }
   }
 }

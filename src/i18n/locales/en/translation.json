@@ -95,6 +95,12 @@
   "dashboard": {
     "greeting": "Hi, {{name}}!",
     "prompt": "Ready to check what's in {{name}}'s food?",
-    "editPet": "Change pet"
+    "editPet": "Change pet",
+    "historyTitle": "Recent scans",
+    "historyOutcome": {
+      "analyzed": "Analyzed",
+      "brand-unknown": "Brand not found",
+      "not-found": "No data"
+    }
   }
 }

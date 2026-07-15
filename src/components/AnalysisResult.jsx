@@ -8,7 +8,7 @@ import LabelCapture from './LabelCapture';
 import PetAvatar from './PetAvatar';
 import './AnalysisResult.css';
 
-export default function AnalysisResult({ barcode, pet, onScanAgain }) {
+export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
   const [state, setState] = useState('loading'); // loading | not-found | brand-unknown | analyzed | capture | captured
@@ -23,11 +23,18 @@ export default function AnalysisResult({ barcode, pet, onScanAgain }) {
       setProduct(result);
       if (!result.found) {
         setState('not-found');
+        onResult?.({ barcode, outcome: 'not-found' });
         return;
       }
       const matchedBrand = matchBrand(result);
       setBrand(matchedBrand);
       setState(matchedBrand ? 'analyzed' : 'brand-unknown');
+      onResult?.({
+        barcode,
+        outcome: matchedBrand ? 'analyzed' : 'brand-unknown',
+        productName: result.productName || null,
+        brandName: matchedBrand?.name || null,
+      });
     });
     return () => {
       cancelled = true;
