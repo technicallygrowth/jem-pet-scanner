@@ -48,5 +48,19 @@
       "none": "No",
       "missing": "No data yet"
     }
+  },
+  "capture": {
+    "helpAddButton": "Help us add this product",
+    "title": "Send us the label",
+    "body": "Take a clear photo of the label (ingredients side is most useful). We'll use it to add this product to our database.",
+    "takePhotoButton": "Take a photo",
+    "retakeButton": "Retake",
+    "noteLabel": "Anything you'd like to add? (optional)",
+    "notePlaceholder": "e.g. brand name, pet type, where you bought it",
+    "submitButton": "Send",
+    "cancelButton": "Cancel",
+    "thanksTitle": "Thank you",
+    "thanksBody": "We got the label.",
+    "pilotNote": "Pilot note: during this test the photo stays on your device — it isn't uploaded yet. We're validating the flow first, then we'll wire up real submissions."
   }
 }

@@ -48,5 +48,19 @@
       "none": "No",
       "missing": "Sin dato"
     }
+  },
+  "capture": {
+    "helpAddButton": "Ayúdanos a agregar este producto",
+    "title": "Mándanos la etiqueta",
+    "body": "Toma una foto clara de la etiqueta (el lado de los ingredientes es el más útil). La usaremos para agregar este producto a nuestra base.",
+    "takePhotoButton": "Tomar foto",
+    "retakeButton": "Volver a tomar",
+    "noteLabel": "¿Algo que quieras agregar? (opcional)",
+    "notePlaceholder": "ej. nombre de la marca, tipo de mascota, dónde la compraste",
+    "submitButton": "Enviar",
+    "cancelButton": "Cancelar",
+    "thanksTitle": "Gracias",
+    "thanksBody": "Recibimos la etiqueta.",
+    "pilotNote": "Nota del piloto: durante esta prueba la foto se queda en tu dispositivo — todavía no se envía. Estamos validando el flujo primero; después conectamos los envíos reales."
   }
 }

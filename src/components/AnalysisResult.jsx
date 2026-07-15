@@ -4,12 +4,13 @@ import { lookupProductByBarcode } from '../services/openPetFoodFacts';
 import { matchBrand } from '../utils/matchBrand';
 import { detectArtificialAdditives } from '../utils/detectSignals';
 import SignalBadge from './SignalBadge';
+import LabelCapture from './LabelCapture';
 import './AnalysisResult.css';
 
 export default function AnalysisResult({ barcode, onScanAgain }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
-  const [state, setState] = useState('loading'); // loading | not-found | brand-unknown | analyzed
+  const [state, setState] = useState('loading'); // loading | not-found | brand-unknown | analyzed | capture | captured
   const [product, setProduct] = useState(null);
   const [brand, setBrand] = useState(null);
 
@@ -36,13 +37,39 @@ export default function AnalysisResult({ barcode, onScanAgain }) {
     return <p className="analysis__hint">{t('analysis.loading')}</p>;
   }
 
+  if (state === 'capture') {
+    return (
+      <LabelCapture
+        barcode={barcode}
+        onCancel={() => setState(product?.found ? 'brand-unknown' : 'not-found')}
+        onSubmitted={() => setState('captured')}
+      />
+    );
+  }
+
+  if (state === 'captured') {
+    return (
+      <div className="analysis__empty">
+        <h2>{t('capture.thanksTitle')}</h2>
+        <p>{t('capture.thanksBody')}</p>
+        <p className="analysis__illustrative-banner">{t('capture.pilotNote')}</p>
+        <button type="button" className="scanner__primary-button" onClick={onScanAgain}>
+          {t('scanner.scanAgainButton')}
+        </button>
+      </div>
+    );
+  }
+
   if (state === 'not-found') {
     return (
       <div className="analysis__empty">
         <h2>{t('analysis.productNotFoundTitle')}</h2>
         <p>{t('analysis.productNotFoundBody')}</p>
         <p className="analysis__barcode">{barcode}</p>
-        <button type="button" className="scanner__primary-button" onClick={onScanAgain}>
+        <button type="button" className="scanner__primary-button" onClick={() => setState('capture')}>
+          {t('capture.helpAddButton')}
+        </button>
+        <button type="button" className="scanner__secondary-button" onClick={onScanAgain}>
           {t('scanner.scanAgainButton')}
         </button>
       </div>
@@ -56,7 +83,10 @@ export default function AnalysisResult({ barcode, onScanAgain }) {
         <p>{t('analysis.brandNotFoundBody')}</p>
         {product?.productName && <p className="analysis__product-name">{product.productName}</p>}
         <p className="analysis__barcode">{barcode}</p>
-        <button type="button" className="scanner__primary-button" onClick={onScanAgain}>
+        <button type="button" className="scanner__primary-button" onClick={() => setState('capture')}>
+          {t('capture.helpAddButton')}
+        </button>
+        <button type="button" className="scanner__secondary-button" onClick={onScanAgain}>
           {t('scanner.scanAgainButton')}
         </button>
       </div>
