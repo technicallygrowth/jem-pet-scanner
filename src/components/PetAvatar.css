@@ -2,10 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  overflow: hidden;
   flex-shrink: 0;
+  filter: drop-shadow(0 6px 10px rgba(46, 42, 57, 0.18));
 }
 
 .pet-avatar svg {
