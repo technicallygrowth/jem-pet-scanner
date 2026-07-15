@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from './components/LanguageToggle';
-import Dashboard from './components/Dashboard';
+import AppShell from './components/AppShell';
 import ProfileCreation from './components/ProfileCreation';
 import { usePets } from './hooks/usePets';
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
         {pets.length === 0 || !activePet ? (
           <ProfileCreation onSave={addPet} />
         ) : (
-          <Dashboard activePet={activePet} petsState={petsState} />
+          <AppShell activePet={activePet} petsState={petsState} />
         )}
       </main>
     </div>

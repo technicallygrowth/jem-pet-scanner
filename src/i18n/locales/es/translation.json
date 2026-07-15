@@ -3,6 +3,13 @@
     "title": "Jem Pet Scanner",
     "tagline": "Escanea el código de barras de la comida de tu mascota"
   },
+  "nav": {
+    "label": "Navegación principal",
+    "home": "Inicio",
+    "scan": "Escanear",
+    "care": "Cuidados",
+    "tips": "Consejos"
+  },
   "scanner": {
     "startButton": "Escanear código de barras",
     "stopButton": "Detener escaneo",
@@ -137,6 +144,38 @@
     },
     "methodologyLink": "Cómo analizamos",
     "editPetLink": "Editar"
+  },
+  "home": {
+    "lastScanLabel": "Último escaneo",
+    "noScansYet": "Todavía no escaneas nada",
+    "careProgressLabel": "Bitácora de cuidados",
+    "careProgressValue": "{{count}}/{{total}} registrados",
+    "scanNowButton": "Escanear ahora"
+  },
+  "care": {
+    "title": "Bitácora de {{name}}",
+    "intro": "Lleva el control de fechas para no tener que memorizarlas. Es solo un registro personal — todavía sin recordatorios ni predicciones.",
+    "categories": {
+      "vaccines": "Vacunas",
+      "vet": "Visita al veterinario",
+      "nails": "Corte de uñas",
+      "heat": "Celo",
+      "bath": "Baño",
+      "deworming": "Desparasitación"
+    },
+    "neuteredLabel": "Esterilizado/a",
+    "neuteredYesNote": "No aplica — esterilizado/a",
+    "lastDateLabel": "Última vez",
+    "neverLogged": "Nunca registrado",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "daysAgo": "Hace {{count}} días",
+    "disclaimer": "Esta bitácora no sustituye el calendario que te recomiende tu veterinario — consúltalo para saber qué toca y cuándo."
+  },
+  "tips": {
+    "title": "Consejos y mitos",
+    "mythsTitle": "Mitos comunes de mascotas",
+    "tipsTitle": "Tips para dueños"
   },
   "editPet": {
     "title": "Editar mascota",

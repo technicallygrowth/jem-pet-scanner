@@ -3,6 +3,13 @@
     "title": "Jem Pet Scanner",
     "tagline": "Scan a pet-food barcode to see what's inside"
   },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "scan": "Scan",
+    "care": "Care",
+    "tips": "Tips"
+  },
   "scanner": {
     "startButton": "Scan a barcode",
     "stopButton": "Stop scanning",
@@ -137,6 +144,38 @@
     },
     "methodologyLink": "How we analyze",
     "editPetLink": "Edit"
+  },
+  "home": {
+    "lastScanLabel": "Last scan",
+    "noScansYet": "No scans yet",
+    "careProgressLabel": "Care log",
+    "careProgressValue": "{{count}}/{{total}} logged",
+    "scanNowButton": "Scan now"
+  },
+  "care": {
+    "title": "{{name}}'s care log",
+    "intro": "Keep track of dates so you don't have to remember them. This is just a personal log — no reminders or predictions yet.",
+    "categories": {
+      "vaccines": "Vaccines",
+      "vet": "Vet visit",
+      "nails": "Nail trim",
+      "heat": "Heat cycle",
+      "bath": "Bath",
+      "deworming": "Deworming"
+    },
+    "neuteredLabel": "Spayed/neutered",
+    "neuteredYesNote": "Not applicable — spayed/neutered",
+    "lastDateLabel": "Last done",
+    "neverLogged": "Never logged",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{count}} days ago",
+    "disclaimer": "This log doesn't replace your vet's recommended schedule — check with them for what's due when."
+  },
+  "tips": {
+    "title": "Tips & myths",
+    "mythsTitle": "Common pet myths",
+    "tipsTitle": "Tips for owners"
   },
   "editPet": {
     "title": "Edit pet",

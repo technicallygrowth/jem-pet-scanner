@@ -1,0 +1,62 @@
+.tips-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+.tips-tab__title {
+  font-size: 1.3rem;
+  color: var(--color-magenta);
+  margin: 0;
+  text-align: center;
+}
+
+.tips-tab__section-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  margin: 0 0 10px;
+}
+
+.tips-tab__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tips-tab__tip-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.tips-tab__tip-card h4 {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+  color: var(--color-magenta);
+}
+
+.tips-tab__tip-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+}
+
+.tips-tab__methodology-link {
+  align-self: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-magenta);
+  cursor: pointer;
+}

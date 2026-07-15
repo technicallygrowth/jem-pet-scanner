@@ -1,0 +1,75 @@
+{
+  "_readme": "General pet-care content for the Consejos tab — deliberately separate from the food-specific beliefs in CommonBeliefs.jsx (those live inside a scan's analysis). Same golden rule: evidence gets the visual weight, belief is framed as 'what people think'.",
+  "myths": [
+    {
+      "id": "dog-years",
+      "belief": {
+        "en": "Many people convert a dog's age to \"human years\" by multiplying by 7.",
+        "es": "Mucha gente convierte la edad de un perro a \"años humanos\" multiplicando por 7."
+      },
+      "evidence": {
+        "en": "Aging isn't linear or the same across breeds: small dogs mature quickly then age slowly, while large breeds age faster later in life. Vets use breed/size-specific age charts, not a flat multiplier.",
+        "es": "El envejecimiento no es lineal ni igual entre razas: los perros pequeños maduran rápido y luego envejecen despacio, mientras que las razas grandes envejecen más rápido en la etapa final. Los veterinarios usan tablas de edad específicas por raza/tamaño, no un multiplicador fijo."
+      }
+    },
+    {
+      "id": "cat-falls",
+      "belief": {
+        "en": "Cats always land safely, so falls from height aren't dangerous for them.",
+        "es": "Los gatos siempre caen bien parados, así que las caídas de altura no son peligrosas para ellos."
+      },
+      "evidence": {
+        "en": "\"High-rise syndrome\" is a real, documented risk — cats falling from windows or balconies can suffer serious injuries. Secure screens matter, especially in apartments.",
+        "es": "El \"síndrome del gato paracaidista\" es un riesgo real y documentado — los gatos que caen de ventanas o balcones pueden sufrir lesiones graves. Los mosquiteros bien puestos importan, sobre todo en apartamentos."
+      }
+    },
+    {
+      "id": "warm-nose",
+      "belief": {
+        "en": "A warm, dry nose means a dog is sick; a cold, wet nose means they're healthy.",
+        "es": "Una nariz caliente y seca significa que el perro está enfermo; una nariz fría y húmeda significa que está sano."
+      },
+      "evidence": {
+        "en": "Nose temperature and moisture change constantly with naps, weather, and hydration — vets don't consider it a reliable health indicator on its own.",
+        "es": "La temperatura y humedad de la nariz cambian todo el tiempo con las siestas, el clima y la hidratación — los veterinarios no lo consideran un indicador de salud confiable por sí solo."
+      }
+    },
+    {
+      "id": "grass-eating",
+      "belief": {
+        "en": "If a dog eats grass, it means something is wrong and they're trying to induce vomiting.",
+        "es": "Si un perro come pasto, significa que algo está mal y está tratando de provocarse el vómito."
+      },
+      "evidence": {
+        "en": "Grass-eating is very common in healthy dogs too, and most don't vomit afterward. On its own it's not a specific sign of illness — pair it with other symptoms before worrying.",
+        "es": "Comer pasto es muy común incluso en perros sanos, y la mayoría no vomita después. Por sí solo no es una señal específica de enfermedad — hay que fijarse si viene acompañado de otros síntomas."
+      }
+    }
+  ],
+  "tips": [
+    {
+      "id": "dental",
+      "title": { "en": "Dental health isn't just about breath", "es": "La salud dental no es solo por el aliento" },
+      "body": {
+        "en": "Bad breath is often an early sign of dental disease, which can affect more than the mouth over time. Regular brushing (yes, dogs and cats can get used to it) and vet dental checkups help.",
+        "es": "El mal aliento suele ser una señal temprana de enfermedad dental, que con el tiempo puede afectar más que la boca. Cepillar los dientes con regularidad (sí, perros y gatos se pueden acostumbrar) y revisiones dentales con el veterinario ayudan."
+      }
+    },
+    {
+      "id": "enrichment",
+      "title": { "en": "Mental stimulation matters as much as walks", "es": "La estimulación mental importa tanto como los paseos" },
+      "body": {
+        "en": "Puzzle feeders, scent games, and short training sessions tire out a bored pet's brain, which can reduce anxiety-driven behaviors as much as physical exercise does.",
+        "es": "Los comederos con rompecabezas, juegos de olfato y sesiones cortas de entrenamiento cansan el cerebro de una mascota aburrida, lo que puede reducir comportamientos ligados a la ansiedad tanto como el ejercicio físico."
+      }
+    },
+    {
+      "id": "emergency-prep",
+      "title": { "en": "Know your nearest 24-hour vet clinic before you need it", "es": "Conoce tu clínica veterinaria 24 horas más cercana antes de necesitarla" },
+      "body": {
+        "en": "In an emergency you don't want to be searching. Save the address and phone number of an emergency vet clinic somewhere you'll actually find it fast.",
+        "es": "En una emergencia no quieres estar buscando. Guarda la dirección y el teléfono de una clínica veterinaria de urgencias en algún lugar donde de verdad la encuentres rápido."
+      }
+    }
+  ]
+}
