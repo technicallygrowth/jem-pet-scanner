@@ -33,10 +33,13 @@
     "productNotFoundBody": "Este código no está en la base de datos abierta que consultamos. Conforme más gente escanee, vamos a reconocer más productos.",
     "brandNotFoundTitle": "Marca aún no analizada",
     "brandNotFoundBody": "Encontramos el producto, pero todavía no hemos evaluado su marca contra nuestros criterios.",
+    "forPet": "Para {{name}}",
+    "speciesNotCovered": "{{brand}} fabrica principalmente para otra especie — todavía no tenemos una evaluación específica para {{species}} de esta línea.",
     "layer1Title": "Orientación rápida",
     "layer2Title": "Qué dice la evidencia",
     "signals": {
       "completeBalanced": "Completo y balanceado para esta etapa de vida",
+      "completeBalancedFor": "Completo y balanceado para {{stage}}",
       "wsava": "La marca cumple criterios veterinarios (WSAVA)",
       "feedingTrials": "Respaldado por pruebas de alimentación reales",
       "dyes": "Contiene colorantes o saborizantes artificiales",

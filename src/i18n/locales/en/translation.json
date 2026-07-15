@@ -33,10 +33,13 @@
     "productNotFoundBody": "This barcode isn't in the open product database we check. As more people scan, we'll be able to recognize more products.",
     "brandNotFoundTitle": "Brand not yet analyzed",
     "brandNotFoundBody": "We found the product, but haven't evaluated its brand against our criteria yet.",
+    "forPet": "For {{name}}",
+    "speciesNotCovered": "{{brand}} mainly makes food for other species — we don't have a {{species}}-specific evaluation for this line yet.",
     "layer1Title": "Quick facts",
     "layer2Title": "What the evidence says",
     "signals": {
       "completeBalanced": "Complete & balanced for this life stage",
+      "completeBalancedFor": "Complete & balanced for a {{stage}}",
       "wsava": "Brand meets veterinary (WSAVA) criteria",
       "feedingTrials": "Backed by real feeding trials",
       "dyes": "Contains artificial dyes or flavors",

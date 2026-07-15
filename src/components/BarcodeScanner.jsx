@@ -20,7 +20,7 @@ function getNativeDetector() {
   return new window.BarcodeDetector({ formats: BARCODE_FORMATS });
 }
 
-export default function BarcodeScanner() {
+export default function BarcodeScanner({ pet }) {
   const { t } = useTranslation();
   const [status, setStatus] = useState('idle'); // idle | requesting | scanning | detected | error
   const [errorKey, setErrorKey] = useState(null);
@@ -228,7 +228,9 @@ export default function BarcodeScanner() {
         </>
       )}
 
-      {status === 'detected' && <AnalysisResult barcode={barcode} onScanAgain={startScanning} />}
+      {status === 'detected' && (
+        <AnalysisResult barcode={barcode} pet={pet} onScanAgain={startScanning} />
+      )}
 
       {status === 'error' && (
         <div className="scanner__error">

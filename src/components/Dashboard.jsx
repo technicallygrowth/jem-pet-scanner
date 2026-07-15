@@ -24,7 +24,7 @@ export default function Dashboard({ pet, onEditPet }) {
         </p>
       </section>
 
-      <BarcodeScanner />
+      <BarcodeScanner pet={pet} />
 
       <button type="button" className="dashboard__edit" onClick={onEditPet}>
         {t('dashboard.editPet')}

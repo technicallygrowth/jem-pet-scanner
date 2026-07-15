@@ -5,9 +5,10 @@ import { matchBrand } from '../utils/matchBrand';
 import { detectArtificialAdditives } from '../utils/detectSignals';
 import SignalBadge from './SignalBadge';
 import LabelCapture from './LabelCapture';
+import PetAvatar from './PetAvatar';
 import './AnalysisResult.css';
 
-export default function AnalysisResult({ barcode, onScanAgain }) {
+export default function AnalysisResult({ barcode, pet, onScanAgain }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
   const [state, setState] = useState('loading'); // loading | not-found | brand-unknown | analyzed | capture | captured
@@ -97,9 +98,20 @@ export default function AnalysisResult({ barcode, onScanAgain }) {
   const dyesState = detectArtificialAdditives(product.ingredientsText);
   const wsavaState = brand.wsava.overall === 'unevaluated' ? 'missing' : brand.wsava.overall;
   const feedingTrialsState = brand.wsava.allFiveCriteriaMet === true ? 'met' : 'missing';
+  const speciesCovered = !pet || brand.species.includes(pet.species);
+  const completeBalancedLabel = pet
+    ? t('analysis.signals.completeBalancedFor', { stage: t(`profile.${pet.lifeStage}`).toLowerCase() })
+    : t('analysis.signals.completeBalanced');
 
   return (
     <div className="analysis">
+      {pet && (
+        <div className="analysis__pet-context">
+          <PetAvatar species={pet.species} size={44} />
+          <span>{t('analysis.forPet', { name: pet.name })}</span>
+        </div>
+      )}
+
       <div className="analysis__header">
         {product.imageUrl && <img src={product.imageUrl} alt="" className="analysis__product-image" />}
         <div>
@@ -110,10 +122,19 @@ export default function AnalysisResult({ barcode, onScanAgain }) {
 
       <p className="analysis__illustrative-banner">{t('analysis.illustrative')}</p>
 
+      {!speciesCovered && (
+        <p className="analysis__species-caveat">
+          {t('analysis.speciesNotCovered', {
+            brand: brand.name,
+            species: t(`profile.${pet.species}Lower`),
+          })}
+        </p>
+      )}
+
       <section className="analysis__layer">
         <h3 className="analysis__layer-title">{t('analysis.layer1Title')}</h3>
         <div className="analysis__badges">
-          <SignalBadge label={t('analysis.signals.completeBalanced')} state="missing" />
+          <SignalBadge label={completeBalancedLabel} state="missing" />
           <SignalBadge label={t('analysis.signals.wsava')} state={wsavaState} />
           <SignalBadge label={t('analysis.signals.feedingTrials')} state={feedingTrialsState} />
           <SignalBadge label={t('analysis.signals.dyes')} state={dyesState} />

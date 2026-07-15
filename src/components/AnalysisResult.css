@@ -12,6 +12,24 @@
   text-align: center;
 }
 
+.analysis__pet-context {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-magenta);
+}
+
+.analysis__species-caveat {
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  background: rgba(255, 143, 163, 0.25);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
 .analysis__header {
   display: flex;
   align-items: center;
