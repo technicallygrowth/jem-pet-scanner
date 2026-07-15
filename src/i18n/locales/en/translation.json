@@ -62,5 +62,36 @@
     "thanksTitle": "Thank you",
     "thanksBody": "We got the label.",
     "pilotNote": "Pilot note: during this test the photo stays on your device — it isn't uploaded yet. We're validating the flow first, then we'll wire up real submissions."
+  },
+  "profile": {
+    "step1Title": "Who lives with you?",
+    "step1Subtitle": "Let's set up their profile so the app can tailor what it shows you.",
+    "illustrationNote": "These illustrations are temporary — our creative team will replace them with the full kawaii avatar set soon.",
+    "dog": "A dog",
+    "cat": "A cat",
+    "dogLower": "dog",
+    "catLower": "cat",
+    "step2DogTitle": "What's your dog's name?",
+    "step2CatTitle": "What's your cat's name?",
+    "namePlaceholder": "e.g. Firulais",
+    "continueButton": "Continue",
+    "backButton": "Back",
+    "step3Title": "How old is {{name}}?",
+    "puppy": "Puppy",
+    "adult": "Adult",
+    "senior": "Senior",
+    "puppyAgeHint": "Less than 1 year",
+    "adultAgeHint": "1 – 7 years",
+    "seniorAgeHint": "7 years and up",
+    "step4Greeting": "Hi, {{name}}!",
+    "step4Summary_puppy": "We'll tune the analysis for a growing {{species}}.",
+    "step4Summary_adult": "We'll tune the analysis for an adult {{species}}.",
+    "step4Summary_senior": "We'll tune the analysis for a senior {{species}}.",
+    "startButton": "Let's start"
+  },
+  "dashboard": {
+    "greeting": "Hi, {{name}}!",
+    "prompt": "Ready to check what's in {{name}}'s food?",
+    "editPet": "Change pet"
   }
 }

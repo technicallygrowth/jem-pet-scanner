@@ -1,0 +1,62 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.dashboard__greeting {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
+}
+
+.dashboard__greeting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard__hello {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--color-magenta);
+  line-height: 1.15;
+}
+
+.dashboard__meta {
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  opacity: 0.75;
+  text-transform: capitalize;
+}
+
+.dashboard__prompt {
+  text-align: center;
+}
+
+.dashboard__prompt-text {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  max-width: 360px;
+}
+
+.dashboard__edit {
+  background: transparent;
+  border: none;
+  color: var(--color-charcoal);
+  opacity: 0.6;
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 8px;
+}

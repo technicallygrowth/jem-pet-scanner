@@ -62,5 +62,36 @@
     "thanksTitle": "Gracias",
     "thanksBody": "Recibimos la etiqueta.",
     "pilotNote": "Nota del piloto: durante esta prueba la foto se queda en tu dispositivo — todavía no se envía. Estamos validando el flujo primero; después conectamos los envíos reales."
+  },
+  "profile": {
+    "step1Title": "¿Con quién compartes casa?",
+    "step1Subtitle": "Vamos a crear su perfil para que la app te muestre lo que le corresponde.",
+    "illustrationNote": "Estas ilustraciones son temporales — el equipo creativo las va a reemplazar con el set completo de avatares kawaii.",
+    "dog": "Un perro",
+    "cat": "Un gato",
+    "dogLower": "perro",
+    "catLower": "gato",
+    "step2DogTitle": "¿Cómo se llama tu perro?",
+    "step2CatTitle": "¿Cómo se llama tu gato?",
+    "namePlaceholder": "ej. Firulais",
+    "continueButton": "Continuar",
+    "backButton": "Atrás",
+    "step3Title": "¿Qué edad tiene {{name}}?",
+    "puppy": "Cachorro",
+    "adult": "Adulto",
+    "senior": "Senior",
+    "puppyAgeHint": "Menos de 1 año",
+    "adultAgeHint": "1 a 7 años",
+    "seniorAgeHint": "7 años en adelante",
+    "step4Greeting": "¡Hola, {{name}}!",
+    "step4Summary_puppy": "Ajustaremos el análisis para un {{species}} en crecimiento.",
+    "step4Summary_adult": "Ajustaremos el análisis para un {{species}} adulto.",
+    "step4Summary_senior": "Ajustaremos el análisis para un {{species}} senior.",
+    "startButton": "Empezar"
+  },
+  "dashboard": {
+    "greeting": "¡Hola, {{name}}!",
+    "prompt": "¿Revisamos qué tiene la comida de {{name}}?",
+    "editPet": "Cambiar mascota"
   }
 }

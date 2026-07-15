@@ -1,10 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from './components/LanguageToggle';
-import BarcodeScanner from './components/BarcodeScanner';
+import Dashboard from './components/Dashboard';
+import ProfileCreation from './components/ProfileCreation';
+import { usePet } from './hooks/usePet';
 import './App.css';
 
 function App() {
   const { t } = useTranslation();
+  const { pet, savePet, clearPet } = usePet();
 
   return (
     <div className="app">
@@ -14,8 +17,11 @@ function App() {
       </header>
 
       <main className="app__main">
-        <p className="app__tagline">{t('app.tagline')}</p>
-        <BarcodeScanner />
+        {!pet ? (
+          <ProfileCreation onSave={savePet} />
+        ) : (
+          <Dashboard pet={pet} onEditPet={clearPet} />
+        )}
       </main>
     </div>
   );
