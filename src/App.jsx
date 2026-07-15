@@ -2,12 +2,13 @@ import { useTranslation } from 'react-i18next';
 import LanguageToggle from './components/LanguageToggle';
 import Dashboard from './components/Dashboard';
 import ProfileCreation from './components/ProfileCreation';
-import { usePet } from './hooks/usePet';
+import { usePets } from './hooks/usePets';
 import './App.css';
 
 function App() {
   const { t } = useTranslation();
-  const { pet, savePet, clearPet } = usePet();
+  const petsState = usePets();
+  const { pets, activePet, addPet } = petsState;
 
   return (
     <div className="app">
@@ -17,10 +18,10 @@ function App() {
       </header>
 
       <main className="app__main">
-        {!pet ? (
-          <ProfileCreation onSave={savePet} />
+        {pets.length === 0 || !activePet ? (
+          <ProfileCreation onSave={addPet} />
         ) : (
-          <Dashboard pet={pet} onEditPet={clearPet} />
+          <Dashboard activePet={activePet} petsState={petsState} />
         )}
       </main>
     </div>

@@ -83,6 +83,7 @@
     "namePlaceholder": "ej. Firulais",
     "continueButton": "Continuar",
     "backButton": "Atrás",
+    "cancelButton": "Cancelar",
     "step3Title": "¿Qué edad tiene {{name}}?",
     "puppy": "Cachorro",
     "adult": "Adulto",
@@ -100,6 +101,7 @@
     "greeting": "¡Hola, {{name}}!",
     "prompt": "¿Revisamos qué tiene la comida de {{name}}?",
     "editPet": "Cambiar mascota",
+    "addPet": "Agregar otra mascota",
     "historyTitle": "Escaneos recientes",
     "historyOutcome": {
       "analyzed": "Analizado",

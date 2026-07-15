@@ -9,7 +9,7 @@ const LIFE_STAGES = [
   { key: 'senior', ageHint: 'seniorAgeHint' },
 ];
 
-export default function ProfileCreation({ onSave }) {
+export default function ProfileCreation({ onSave, onCancel }) {
   const { t } = useTranslation();
   const [step, setStep] = useState(1);
   const [species, setSpecies] = useState(null);
@@ -73,6 +73,11 @@ export default function ProfileCreation({ onSave }) {
             </button>
           </div>
           <p className="profile-creation__illustration-note">{t('profile.illustrationNote')}</p>
+          {onCancel && (
+            <button type="button" className="profile-creation__back" onClick={onCancel}>
+              {t('profile.cancelButton')}
+            </button>
+          )}
         </>
       )}
 

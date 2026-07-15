@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PetAvatar from './PetAvatar';
 import BarcodeScanner from './BarcodeScanner';
 import Methodology from './Methodology';
+import ProfileCreation from './ProfileCreation';
 import { useScanHistory } from '../hooks/useScanHistory';
 import './Dashboard.css';
 
@@ -14,22 +15,53 @@ const OUTCOME_ICON = {
   'not-found': '?',
 };
 
-export default function Dashboard({ pet, onEditPet }) {
+export default function Dashboard({ activePet: pet, petsState }) {
   const { t } = useTranslation();
+  const { pets, setActivePetId, addPet } = petsState;
   const { history, addEntry } = useScanHistory();
   const [openBarcode, setOpenBarcode] = useState(null);
   const [showMethodology, setShowMethodology] = useState(false);
+  const [showAddPet, setShowAddPet] = useState(false);
 
   function handleAnalysisResult(result) {
     addEntry(result);
+  }
+
+  function handleAddPet(data) {
+    addPet(data);
+    setShowAddPet(false);
   }
 
   if (showMethodology) {
     return <Methodology onBack={() => setShowMethodology(false)} />;
   }
 
+  if (showAddPet) {
+    return <ProfileCreation onSave={handleAddPet} onCancel={() => setShowAddPet(false)} />;
+  }
+
   return (
     <div className="dashboard">
+      {pets.length > 1 && (
+        <div className="dashboard__pet-switcher">
+          {pets.map((p) => (
+            <button
+              key={p.id}
+              type="button"
+              className={
+                p.id === pet.id
+                  ? 'dashboard__pet-switcher-item is-active'
+                  : 'dashboard__pet-switcher-item'
+              }
+              onClick={() => setActivePetId(p.id)}
+            >
+              <PetAvatar species={p.species} size={44} />
+              <span>{p.name}</span>
+            </button>
+          ))}
+        </div>
+      )}
+
       <section className="dashboard__greeting">
         <PetAvatar species={pet.species} size={120} />
         <div className="dashboard__greeting-text">
@@ -88,8 +120,8 @@ export default function Dashboard({ pet, onEditPet }) {
         <button type="button" className="dashboard__edit" onClick={() => setShowMethodology(true)}>
           {t('dashboard.methodologyLink')}
         </button>
-        <button type="button" className="dashboard__edit" onClick={onEditPet}>
-          {t('dashboard.editPet')}
+        <button type="button" className="dashboard__edit" onClick={() => setShowAddPet(true)}>
+          {t('dashboard.addPet')}
         </button>
       </div>
     </div>

@@ -83,6 +83,7 @@
     "namePlaceholder": "e.g. Firulais",
     "continueButton": "Continue",
     "backButton": "Back",
+    "cancelButton": "Cancel",
     "step3Title": "How old is {{name}}?",
     "puppy": "Puppy",
     "adult": "Adult",
@@ -100,6 +101,7 @@
     "greeting": "Hi, {{name}}!",
     "prompt": "Ready to check what's in {{name}}'s food?",
     "editPet": "Change pet",
+    "addPet": "Add another pet",
     "historyTitle": "Recent scans",
     "historyOutcome": {
       "analyzed": "Analyzed",
