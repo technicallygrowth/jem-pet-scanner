@@ -1,0 +1,61 @@
+.beliefs__intro {
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  opacity: 0.75;
+  margin: 0 0 12px;
+}
+
+.beliefs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.beliefs__card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* The belief is deliberately the quieter element: smaller, muted, italic —
+   framed as "what people think", not a claim we're making. */
+.beliefs__belief {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-charcoal);
+  opacity: 0.65;
+  line-height: 1.4;
+}
+
+.beliefs__belief-label {
+  display: block;
+  font-style: normal;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
+/* The evidence is the primary, higher-contrast element — this is the
+   "what actually matters" line, and it reads that way. */
+.beliefs__evidence {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+}
+
+.beliefs__evidence-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-magenta);
+  margin-bottom: 4px;
+}

@@ -6,6 +6,7 @@ import { detectArtificialAdditives } from '../utils/detectSignals';
 import SignalBadge from './SignalBadge';
 import LabelCapture from './LabelCapture';
 import PetAvatar from './PetAvatar';
+import CommonBeliefs from './CommonBeliefs';
 import './AnalysisResult.css';
 
 export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) {
@@ -153,6 +154,8 @@ export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) 
         <h3 className="analysis__layer-title">{t('analysis.layer2Title')}</h3>
         <p className="analysis__evidence-text">{brand.evidence[lang]}</p>
       </section>
+
+      <CommonBeliefs />
 
       <button type="button" className="scanner__primary-button" onClick={onScanAgain}>
         {t('scanner.scanAgainButton')}

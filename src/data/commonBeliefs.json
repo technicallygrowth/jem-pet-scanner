@@ -1,0 +1,38 @@
+{
+  "_readme": "Static, brand-independent content for Layer 3 (docs/rubrica-v1-y-datos.md section 1, Capa 3). Golden rule: evidence is presented first and with more visual weight; the belief is framed as 'what many owners think', never stated as fact and never at the same level as the evidence.",
+  "beliefs": [
+    {
+      "id": "by-products",
+      "belief": {
+        "en": "Many owners avoid \"by-products\" on the ingredient list, assuming they're low-quality filler.",
+        "es": "Muchos dueños evitan los \"subproductos\" en la lista de ingredientes, asumiendo que son relleno de baja calidad."
+      },
+      "evidence": {
+        "en": "Veterinary nutritionists don't consider by-products (organ meats like liver, heart) inherently bad — they're nutrient-dense and digestible. What matters more is which company makes the food and how it's tested, not this one ingredient term.",
+        "es": "Los nutriólogos veterinarios no consideran que los subproductos (vísceras como hígado, corazón) sean malos por definición — son nutritivos y digeribles. Lo que más importa es qué empresa hace el alimento y cómo lo prueba, no este término de ingrediente en particular."
+      }
+    },
+    {
+      "id": "grain-free",
+      "belief": {
+        "en": "Many owners look specifically for \"grain-free\" food, believing grains are hard to digest or cause allergies.",
+        "es": "Muchos dueños buscan específicamente alimento \"sin grano\", creyendo que los granos son difíciles de digerir o causan alergias."
+      },
+      "evidence": {
+        "en": "Grains provide fiber and nutrients most dogs and cats digest well; true grain allergies are uncommon. The FDA has investigated a possible link between certain grain-free diets and canine dilated cardiomyopathy (DCM) — this is still an active research area, not a settled verdict, but it means \"grain-free\" isn't automatically the safer choice.",
+        "es": "Los granos aportan fibra y nutrientes que la mayoría de perros y gatos digieren bien; las alergias reales a granos son poco comunes. La FDA ha investigado una posible relación entre ciertas dietas sin grano y la cardiomiopatía dilatada canina (DCM) — sigue siendo un área de investigación activa, no un veredicto cerrado, pero significa que \"sin grano\" no es automáticamente la opción más segura."
+      }
+    },
+    {
+      "id": "ingredient-order",
+      "belief": {
+        "en": "Many owners judge quality by the first ingredient on the list (\"real meat first = better food\").",
+        "es": "Muchos dueños juzgan la calidad por el primer ingrediente de la lista (\"carne real primero = mejor alimento\")."
+      },
+      "evidence": {
+        "en": "Ingredient order is based on pre-cooking weight, which can be misleading (fresh meat includes water weight). The evidence considers a company's manufacturing standards, feeding trials, and quality control more predictive of a good food than where an ingredient sits on the list.",
+        "es": "El orden de los ingredientes se basa en el peso antes de cocinar, lo cual puede ser engañoso (la carne fresca incluye peso de agua). La evidencia considera que los estándares de fabricación, las pruebas de alimentación y el control de calidad de una empresa predicen mejor un buen alimento que la posición de un ingrediente en la lista."
+      }
+    }
+  ]
+}

@@ -37,6 +37,10 @@
     "speciesNotCovered": "{{brand}} mainly makes food for other species — we don't have a {{species}}-specific evaluation for this line yet.",
     "layer1Title": "Quick facts",
     "layer2Title": "What the evidence says",
+    "layer3Title": "Common beliefs vs. evidence",
+    "layer3Intro": "Some things pet owners commonly believe, and what the science actually says — evidence first, belief second, never treated as equally reliable.",
+    "beliefLabel": "What many owners think",
+    "evidenceLabel": "What the evidence says",
     "signals": {
       "completeBalanced": "Complete & balanced for this life stage",
       "completeBalancedFor": "Complete & balanced for a {{stage}}",

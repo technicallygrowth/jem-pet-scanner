@@ -37,6 +37,10 @@
     "speciesNotCovered": "{{brand}} fabrica principalmente para otra especie — todavía no tenemos una evaluación específica para {{species}} de esta línea.",
     "layer1Title": "Orientación rápida",
     "layer2Title": "Qué dice la evidencia",
+    "layer3Title": "Creencias comunes vs. evidencia",
+    "layer3Intro": "Algunas cosas que muchos dueños creen, y lo que dice realmente la ciencia — primero la evidencia, después la creencia, nunca al mismo nivel de confiabilidad.",
+    "beliefLabel": "Lo que muchos dueños creen",
+    "evidenceLabel": "Lo que dice la evidencia",
     "signals": {
       "completeBalanced": "Completo y balanceado para esta etapa de vida",
       "completeBalancedFor": "Completo y balanceado para {{stage}}",
