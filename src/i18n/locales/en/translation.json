@@ -108,7 +108,14 @@
       "brand-unknown": "Brand not found",
       "not-found": "No data"
     },
-    "methodologyLink": "How we analyze"
+    "methodologyLink": "How we analyze",
+    "editPetLink": "Edit"
+  },
+  "editPet": {
+    "title": "Edit pet",
+    "saveButton": "Save",
+    "deleteButton": "Remove this pet",
+    "deleteConfirm": "Remove {{name}}'s profile? This can't be undone."
   },
   "methodology": {
     "title": "How we analyze",

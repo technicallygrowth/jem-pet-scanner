@@ -108,7 +108,14 @@
       "brand-unknown": "Marca no encontrada",
       "not-found": "Sin datos"
     },
-    "methodologyLink": "Cómo analizamos"
+    "methodologyLink": "Cómo analizamos",
+    "editPetLink": "Editar"
+  },
+  "editPet": {
+    "title": "Editar mascota",
+    "saveButton": "Guardar",
+    "deleteButton": "Eliminar esta mascota",
+    "deleteConfirm": "¿Eliminar el perfil de {{name}}? Esto no se puede deshacer."
   },
   "methodology": {
     "title": "Cómo analizamos",

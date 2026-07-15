@@ -48,6 +48,24 @@
   border-radius: 24px;
 }
 
+.dashboard__edit-pet-button {
+  margin-left: auto;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--color-charcoal);
+  opacity: 0.55;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.dashboard__edit-pet-button:hover {
+  opacity: 1;
+  color: var(--color-magenta);
+}
+
 .dashboard__greeting-text {
   display: flex;
   flex-direction: column;

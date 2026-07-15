@@ -4,6 +4,7 @@ import PetAvatar from './PetAvatar';
 import BarcodeScanner from './BarcodeScanner';
 import Methodology from './Methodology';
 import ProfileCreation from './ProfileCreation';
+import EditPetProfile from './EditPetProfile';
 import { useScanHistory } from '../hooks/useScanHistory';
 import './Dashboard.css';
 
@@ -17,11 +18,12 @@ const OUTCOME_ICON = {
 
 export default function Dashboard({ activePet: pet, petsState }) {
   const { t } = useTranslation();
-  const { pets, setActivePetId, addPet } = petsState;
+  const { pets, setActivePetId, addPet, updatePet, removePet } = petsState;
   const { history, addEntry } = useScanHistory();
   const [openBarcode, setOpenBarcode] = useState(null);
   const [showMethodology, setShowMethodology] = useState(false);
   const [showAddPet, setShowAddPet] = useState(false);
+  const [showEditPet, setShowEditPet] = useState(false);
 
   function handleAnalysisResult(result) {
     addEntry(result);
@@ -32,12 +34,33 @@ export default function Dashboard({ activePet: pet, petsState }) {
     setShowAddPet(false);
   }
 
+  function handleSaveEdit(data) {
+    updatePet(pet.id, data);
+    setShowEditPet(false);
+  }
+
+  function handleDeletePet() {
+    removePet(pet.id);
+    setShowEditPet(false);
+  }
+
   if (showMethodology) {
     return <Methodology onBack={() => setShowMethodology(false)} />;
   }
 
   if (showAddPet) {
     return <ProfileCreation onSave={handleAddPet} onCancel={() => setShowAddPet(false)} />;
+  }
+
+  if (showEditPet) {
+    return (
+      <EditPetProfile
+        pet={pet}
+        onSave={handleSaveEdit}
+        onCancel={() => setShowEditPet(false)}
+        onDelete={handleDeletePet}
+      />
+    );
   }
 
   return (
@@ -70,6 +93,14 @@ export default function Dashboard({ activePet: pet, petsState }) {
             {t(`profile.${pet.species}Lower`)} · {t(`profile.${pet.lifeStage}`)}
           </span>
         </div>
+        <button
+          type="button"
+          className="dashboard__edit-pet-button"
+          onClick={() => setShowEditPet(true)}
+          aria-label={t('dashboard.editPetLink')}
+        >
+          ✎
+        </button>
       </section>
 
       <section className="dashboard__prompt">

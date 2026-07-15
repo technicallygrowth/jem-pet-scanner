@@ -75,6 +75,12 @@
   outline: none;
 }
 
+.profile-creation__species-card.is-selected,
+.profile-creation__stage-card.is-selected {
+  border-color: var(--color-magenta);
+  background: rgba(155, 4, 111, 0.08);
+}
+
 .profile-creation__illustration-note {
   font-size: 0.75rem;
   color: var(--color-charcoal);
@@ -154,6 +160,18 @@
   opacity: 0.65;
   font-family: inherit;
   font-size: 0.9rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.editPet__delete {
+  background: transparent;
+  border: none;
+  color: #c0392b;
+  opacity: 0.75;
+  font-family: inherit;
+  font-size: 0.85rem;
   padding: 6px 12px;
   cursor: pointer;
   text-decoration: underline;
