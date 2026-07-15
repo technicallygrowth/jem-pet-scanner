@@ -172,6 +172,12 @@
     "daysAgo": "Hace {{count}} días",
     "disclaimer": "Esta bitácora no sustituye el calendario que te recomiende tu veterinario — consúltalo para saber qué toca y cuándo."
   },
+  "search": {
+    "placeholder": "O busca por nombre de marca…",
+    "noResults": "No encontramos ninguna marca — intenta con otra forma de escribirlo.",
+    "orDivider": "o",
+    "searchAgainButton": "Buscar de nuevo"
+  },
   "tips": {
     "title": "Consejos y mitos",
     "mythsTitle": "Mitos comunes de mascotas",

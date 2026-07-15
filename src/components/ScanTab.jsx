@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BarcodeScanner from './BarcodeScanner';
+import BrandSearch from './BrandSearch';
+import AnalysisResult from './AnalysisResult';
 import { useScanHistory } from '../hooks/useScanHistory';
+import brandsData from '../data/brands.json';
 import './ScanTab.css';
+
+// History entries created via BrandSearch use this pseudo-barcode (see
+// AnalysisResult's directBrand mode) since there's no real barcode to key
+// on. Re-opening one has to route back through search, not the scanner —
+// looking it up against the real barcode API would just 404.
+const BRAND_SEARCH_PREFIX = 'brand:';
 
 // Matches SignalBadge's icon vocabulary: ✓ confirmed, ~ partial info,
 // ? nothing found at all.
@@ -16,9 +25,36 @@ export default function ScanTab({ activePet: pet }) {
   const { t } = useTranslation();
   const { history, addEntry } = useScanHistory();
   const [openBarcode, setOpenBarcode] = useState(null);
+  const [searchedBrand, setSearchedBrand] = useState(null);
+
+  function reopenHistoryItem(item) {
+    if (item.barcode.startsWith(BRAND_SEARCH_PREFIX)) {
+      const brandId = item.barcode.slice(BRAND_SEARCH_PREFIX.length);
+      const brand = brandsData.brands.find((b) => b.id === brandId);
+      if (brand) setSearchedBrand(brand);
+      return;
+    }
+    setOpenBarcode(item.barcode);
+  }
+
+  if (searchedBrand) {
+    return (
+      <div className="scan-tab">
+        <AnalysisResult
+          directBrand={searchedBrand}
+          pet={pet}
+          onScanAgain={() => setSearchedBrand(null)}
+          onResult={addEntry}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="scan-tab">
+      <BrandSearch onSelectBrand={setSearchedBrand} />
+      <div className="scan-tab__divider">{t('search.orDivider')}</div>
+
       <BarcodeScanner
         pet={pet}
         onAnalysisResult={addEntry}
@@ -35,7 +71,7 @@ export default function ScanTab({ activePet: pet }) {
                 <button
                   type="button"
                   className="dashboard__history-item"
-                  onClick={() => setOpenBarcode(item.barcode)}
+                  onClick={() => reopenHistoryItem(item)}
                 >
                   <span
                     className={`dashboard__history-icon dashboard__history-icon--${item.outcome}`}

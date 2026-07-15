@@ -7,6 +7,14 @@
   max-width: 480px;
 }
 
+.scan-tab__divider {
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .dashboard__history {
   width: 100%;
 }

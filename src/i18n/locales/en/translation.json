@@ -172,6 +172,12 @@
     "daysAgo": "{{count}} days ago",
     "disclaimer": "This log doesn't replace your vet's recommended schedule — check with them for what's due when."
   },
+  "search": {
+    "placeholder": "Or search by brand name…",
+    "noResults": "No brands matched — try a different spelling.",
+    "orDivider": "or",
+    "searchAgainButton": "Search again"
+  },
   "tips": {
     "title": "Tips & myths",
     "mythsTitle": "Common pet myths",

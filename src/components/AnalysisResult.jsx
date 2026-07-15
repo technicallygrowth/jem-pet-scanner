@@ -9,14 +9,29 @@ import PetAvatar from './PetAvatar';
 import CommonBeliefs from './CommonBeliefs';
 import './AnalysisResult.css';
 
-export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) {
+// Used when a brand comes from the name search instead of a barcode lookup
+// (no specific product to show an image/name for — just the brand-level
+// facts, which is all our analysis is based on anyway).
+const EMPTY_PRODUCT = { found: false, productName: null, imageUrl: null, ingredientsText: null };
+
+export default function AnalysisResult({ barcode, directBrand, pet, onScanAgain, onResult }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
-  const [state, setState] = useState('loading'); // loading | not-found | brand-unknown | analyzed | capture | captured
-  const [product, setProduct] = useState(null);
-  const [brand, setBrand] = useState(null);
+  const [state, setState] = useState(directBrand ? 'analyzed' : 'loading'); // loading | not-found | brand-unknown | analyzed | capture | captured
+  const [product, setProduct] = useState(directBrand ? EMPTY_PRODUCT : null);
+  const [brand, setBrand] = useState(directBrand ?? null);
 
   useEffect(() => {
+    if (directBrand) {
+      onResult?.({
+        barcode: `brand:${directBrand.id}`,
+        outcome: 'analyzed',
+        productName: null,
+        brandName: directBrand.name,
+      });
+      return;
+    }
+
     let cancelled = false;
     setState('loading');
     lookupProductByBarcode(barcode).then((result) => {
@@ -40,7 +55,7 @@ export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) 
     return () => {
       cancelled = true;
     };
-  }, [barcode]);
+  }, [barcode, directBrand]);
 
   if (state === 'loading') {
     return <p className="analysis__hint">{t('analysis.loading')}</p>;
@@ -164,7 +179,7 @@ export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) 
       <CommonBeliefs />
 
       <button type="button" className="scanner__primary-button" onClick={onScanAgain}>
-        {t('scanner.scanAgainButton')}
+        {directBrand ? t('search.searchAgainButton') : t('scanner.scanAgainButton')}
       </button>
     </div>
   );
