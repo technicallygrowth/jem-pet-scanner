@@ -84,6 +84,33 @@
     "continueButton": "Continue",
     "backButton": "Back",
     "cancelButton": "Cancel",
+    "lookTitle": "What does {{name}} look like?",
+    "lookSubtitle": "Just the basics for now — full custom avatars are coming soon.",
+    "furColorLabel": "Fur color",
+    "eyeColorLabel": "Eye color",
+    "collarColorLabel": "Collar color",
+    "furColors": {
+      "black": "Black",
+      "brown": "Brown",
+      "orange": "Orange / cream",
+      "white": "White",
+      "gray": "Gray",
+      "mixed": "Mixed / bicolor"
+    },
+    "eyeColors": {
+      "darkBrown": "Dark brown",
+      "honey": "Honey brown",
+      "blue": "Blue",
+      "green": "Green"
+    },
+    "collarColors": {
+      "magenta": "Magenta",
+      "peach": "Peach",
+      "blue": "Blue",
+      "gold": "Gold",
+      "green": "Green",
+      "red": "Red"
+    },
     "step3Title": "How old is {{name}}?",
     "puppy": "Puppy",
     "adult": "Adult",

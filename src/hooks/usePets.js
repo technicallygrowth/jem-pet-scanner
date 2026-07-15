@@ -58,6 +58,9 @@ export function usePets() {
         name: next.name.trim(),
         species: next.species,
         lifeStage: next.lifeStage,
+        furColor: next.furColor ?? 'orange',
+        eyeColor: next.eyeColor ?? 'darkBrown',
+        collarColor: next.collarColor ?? 'magenta',
         createdAt: new Date().toISOString(),
       },
     ]);

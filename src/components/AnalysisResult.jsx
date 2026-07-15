@@ -115,7 +115,13 @@ export default function AnalysisResult({ barcode, pet, onScanAgain, onResult }) 
     <div className="analysis">
       {pet && (
         <div className="analysis__pet-context">
-          <PetAvatar species={pet.species} size={44} />
+          <PetAvatar
+            species={pet.species}
+            size={44}
+            furColor={pet.furColor}
+            eyeColor={pet.eyeColor}
+            collarColor={pet.collarColor}
+          />
           <span>{t('analysis.forPet', { name: pet.name })}</span>
         </div>
       )}

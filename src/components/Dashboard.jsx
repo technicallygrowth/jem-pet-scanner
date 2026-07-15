@@ -78,7 +78,13 @@ export default function Dashboard({ activePet: pet, petsState }) {
               }
               onClick={() => setActivePetId(p.id)}
             >
-              <PetAvatar species={p.species} size={44} />
+              <PetAvatar
+                species={p.species}
+                size={44}
+                furColor={p.furColor}
+                eyeColor={p.eyeColor}
+                collarColor={p.collarColor}
+              />
               <span>{p.name}</span>
             </button>
           ))}
@@ -86,7 +92,13 @@ export default function Dashboard({ activePet: pet, petsState }) {
       )}
 
       <section className="dashboard__greeting">
-        <PetAvatar species={pet.species} size={120} />
+        <PetAvatar
+          species={pet.species}
+          size={120}
+          furColor={pet.furColor}
+          eyeColor={pet.eyeColor}
+          collarColor={pet.collarColor}
+        />
         <div className="dashboard__greeting-text">
           <h2 className="dashboard__hello">{t('dashboard.greeting', { name: pet.name })}</h2>
           <span className="dashboard__meta">

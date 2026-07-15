@@ -84,6 +84,33 @@
     "continueButton": "Continuar",
     "backButton": "Atrás",
     "cancelButton": "Cancelar",
+    "lookTitle": "¿Cómo se ve {{name}}?",
+    "lookSubtitle": "Por ahora solo lo básico — los avatares personalizados completos vienen pronto.",
+    "furColorLabel": "Color de pelaje",
+    "eyeColorLabel": "Color de ojos",
+    "collarColorLabel": "Color del collar",
+    "furColors": {
+      "black": "Negro",
+      "brown": "Café",
+      "orange": "Naranja / crema",
+      "white": "Blanco",
+      "gray": "Gris",
+      "mixed": "Mestizo / bicolor"
+    },
+    "eyeColors": {
+      "darkBrown": "Café oscuro",
+      "honey": "Café miel",
+      "blue": "Azul",
+      "green": "Verde"
+    },
+    "collarColors": {
+      "magenta": "Magenta",
+      "peach": "Durazno",
+      "blue": "Azul",
+      "gold": "Dorado",
+      "green": "Verde",
+      "red": "Rojo"
+    },
     "step3Title": "¿Qué edad tiene {{name}}?",
     "puppy": "Cachorro",
     "adult": "Adulto",

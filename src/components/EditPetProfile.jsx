@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PetAvatar from './PetAvatar';
+import PetAvatar, { FUR_COLORS, EYE_COLORS, COLLAR_COLORS } from './PetAvatar';
+import ColorSwatchRow from './ColorSwatchRow';
 import './ProfileCreation.css';
 
 const LIFE_STAGES = [
@@ -13,12 +14,19 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
   const { t } = useTranslation();
   const [species, setSpecies] = useState(pet.species);
   const [name, setName] = useState(pet.name);
+  const [furColor, setFurColor] = useState(pet.furColor ?? 'orange');
+  const [eyeColor, setEyeColor] = useState(pet.eyeColor ?? 'darkBrown');
+  const [collarColor, setCollarColor] = useState(pet.collarColor ?? 'magenta');
   const [lifeStage, setLifeStage] = useState(pet.lifeStage);
+
+  const furOptions = FUR_COLORS.map((c) => ({ ...c, label: t(`profile.furColors.${c.key}`) }));
+  const eyeOptions = EYE_COLORS.map((c) => ({ ...c, label: t(`profile.eyeColors.${c.key}`) }));
+  const collarOptions = COLLAR_COLORS.map((c) => ({ ...c, label: t(`profile.collarColors.${c.key}`) }));
 
   function submit(event) {
     event.preventDefault();
     if (!name.trim()) return;
-    onSave({ species, name, lifeStage });
+    onSave({ species, name, furColor, eyeColor, collarColor, lifeStage });
   }
 
   function confirmDelete() {
@@ -32,7 +40,13 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
       <h2 className="profile-creation__title">{t('editPet.title')}</h2>
 
       <div className="profile-creation__hero">
-        <PetAvatar species={species} size={140} />
+        <PetAvatar
+          species={species}
+          size={140}
+          furColor={furColor}
+          eyeColor={eyeColor}
+          collarColor={collarColor}
+        />
       </div>
 
       <div className="profile-creation__species-grid">
@@ -67,6 +81,25 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
         onChange={(e) => setName(e.target.value)}
         placeholder={t('profile.namePlaceholder')}
         maxLength={30}
+      />
+
+      <ColorSwatchRow
+        label={t('profile.furColorLabel')}
+        options={furOptions}
+        value={furColor}
+        onChange={setFurColor}
+      />
+      <ColorSwatchRow
+        label={t('profile.eyeColorLabel')}
+        options={eyeOptions}
+        value={eyeColor}
+        onChange={setEyeColor}
+      />
+      <ColorSwatchRow
+        label={t('profile.collarColorLabel')}
+        options={collarOptions}
+        value={collarColor}
+        onChange={setCollarColor}
       />
 
       <div className="profile-creation__stage-list">
