@@ -3,8 +3,9 @@
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  border-radius: 12px;
-  background: #fff;
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
   text-align: left;
 }
 
@@ -23,7 +24,7 @@
 
 .signal-badge__text {
   font-size: 0.9rem;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
 }
 
 .signal-badge--met .signal-badge__icon {
@@ -40,6 +41,6 @@
 
 .signal-badge--none .signal-badge__icon {
   background: transparent;
-  color: var(--color-charcoal);
-  border: 2px solid var(--color-charcoal);
+  color: var(--text-strong);
+  border: 2px solid var(--text-strong);
 }

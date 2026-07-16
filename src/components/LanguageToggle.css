@@ -1,7 +1,8 @@
 .language-toggle {
   display: inline-flex;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 999px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
   padding: 4px;
   gap: 4px;
 }
@@ -9,12 +10,12 @@
 .language-toggle__option {
   border: none;
   background: transparent;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 500;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
 }
 

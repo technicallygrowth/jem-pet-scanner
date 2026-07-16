@@ -16,22 +16,22 @@
 
 .label-capture__body {
   font-size: 0.9rem;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
   margin: 0;
 }
 
 .label-capture__barcode {
   font-family: monospace;
   font-size: 0.85rem;
-  color: var(--color-charcoal);
-  opacity: 0.6;
+  color: var(--text-muted);
   margin: 0;
 }
 
 .label-capture__preview {
   width: 100%;
   max-width: 320px;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   object-fit: cover;
 }
 
@@ -40,7 +40,7 @@
   flex-direction: column;
   gap: 6px;
   font-size: 0.85rem;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
   text-align: left;
   width: 100%;
 }
@@ -49,19 +49,18 @@
   font-family: inherit;
   font-size: 0.9rem;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(46, 42, 57, 0.15);
   resize: vertical;
   min-height: 60px;
-  background: #fff;
-  color: var(--color-charcoal);
+  background: var(--surface-card);
+  color: var(--text-strong);
 }
 
 .label-capture__cancel {
   background: transparent;
   border: none;
-  color: var(--color-charcoal);
-  opacity: 0.7;
+  color: var(--text-muted);
   font-family: inherit;
   font-size: 0.9rem;
   padding: 6px 12px;

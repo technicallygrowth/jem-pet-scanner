@@ -18,8 +18,7 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--color-charcoal);
-  opacity: 0.8;
+  color: var(--text-muted);
   margin: 0 0 10px;
 }
 
@@ -30,8 +29,9 @@
 }
 
 .tips-tab__tip-card {
-  background: #fff;
-  border-radius: 14px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
   padding: 14px 16px;
 }
 
@@ -45,14 +45,15 @@
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.5;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
 }
 
 .tips-tab__methodology-link {
   align-self: center;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
   border: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   padding: 10px 20px;
   font-family: inherit;
   font-size: 0.9rem;

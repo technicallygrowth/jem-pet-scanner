@@ -1,7 +1,6 @@
 {
   "app": {
-    "title": "Jem Pet Scanner",
-    "tagline": "Escanea el código de barras de la comida de tu mascota"
+    "title": "Jem Pet Scanner"
   },
   "nav": {
     "label": "Navegación principal",

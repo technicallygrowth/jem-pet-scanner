@@ -26,9 +26,3 @@
   padding: 24px 20px 48px;
   text-align: center;
 }
-
-.app__tagline {
-  font-size: 1.05rem;
-  color: var(--color-charcoal);
-  max-width: 360px;
-}

@@ -8,7 +8,7 @@
 }
 
 .analysis__hint {
-  color: var(--color-charcoal);
+  color: var(--text-strong);
   text-align: center;
 }
 
@@ -23,9 +23,9 @@
 
 .analysis__species-caveat {
   font-size: 0.8rem;
-  color: var(--color-charcoal);
-  background: rgba(255, 143, 163, 0.25);
-  border-radius: 12px;
+  color: var(--text-strong);
+  background: rgba(255, 143, 163, 0.28);
+  border-radius: var(--radius-sm);
   padding: 10px 14px;
   margin: 0;
 }
@@ -40,8 +40,9 @@
   width: 56px;
   height: 56px;
   object-fit: contain;
-  border-radius: 12px;
-  background: #fff;
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
 
@@ -52,16 +53,15 @@
 
 .analysis__product-name {
   font-size: 0.85rem;
-  color: var(--color-charcoal);
-  opacity: 0.75;
+  color: var(--text-muted);
   margin-top: 2px;
 }
 
 .analysis__illustrative-banner {
   font-size: 0.8rem;
-  color: var(--color-charcoal);
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 12px;
+  color: var(--text-strong);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-sm);
   padding: 10px 14px;
   margin: 0;
 }
@@ -70,8 +70,7 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--color-charcoal);
-  opacity: 0.8;
+  color: var(--text-muted);
   margin: 0 0 10px;
 }
 
@@ -82,12 +81,13 @@
 }
 
 .analysis__evidence-text {
-  background: #fff;
-  border-radius: 12px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
   padding: 14px 16px;
   font-size: 0.9rem;
   line-height: 1.5;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
   margin: 0;
 }
 
@@ -107,11 +107,11 @@
 
 .analysis__empty p {
   margin: 0;
-  color: var(--color-charcoal);
+  color: var(--text-strong);
 }
 
 .analysis__barcode {
   font-family: monospace;
   font-size: 0.85rem;
-  opacity: 0.6;
+  color: var(--text-muted);
 }

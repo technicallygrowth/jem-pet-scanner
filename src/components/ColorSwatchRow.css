@@ -7,8 +7,7 @@
 
 .color-swatch-row__label {
   font-size: 0.85rem;
-  color: var(--color-charcoal);
-  opacity: 0.75;
+  color: var(--text-muted);
   text-align: left;
 }
 

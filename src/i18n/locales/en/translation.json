@@ -1,7 +1,6 @@
 {
   "app": {
-    "title": "Jem Pet Scanner",
-    "tagline": "Scan a pet-food barcode to see what's inside"
+    "title": "Jem Pet Scanner"
   },
   "nav": {
     "label": "Main navigation",
