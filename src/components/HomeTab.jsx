@@ -32,7 +32,6 @@ function PetSummaryCard({ pet, isActive, onSelect }) {
         furColor={pet.furColor}
         eyeColor={pet.eyeColor}
         collarColor={pet.collarColor}
-        bodyType={pet.bodyType}
       />
       <span className="home-tab__pet-card-name">{pet.name}</span>
       <span className="home-tab__pet-card-care">

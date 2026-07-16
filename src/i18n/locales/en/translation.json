@@ -117,16 +117,6 @@
       "green": "Green",
       "red": "Red"
     },
-    "shapeTitle": "Which shape is closest to {{name}}?",
-    "shapeSubtitle": "A prototype set for now — more breed-like shapes and coats are coming.",
-    "bodyTypes": {
-      "floppy": "Floppy ears",
-      "pointy": "Pointy ears",
-      "fluffy": "Fluffy",
-      "shorthair": "Shorthair",
-      "longhair": "Longhair",
-      "fold": "Folded ears"
-    },
     "sexTitle": "Is {{name}} male or female?",
     "sex": {
       "female": "Female",
