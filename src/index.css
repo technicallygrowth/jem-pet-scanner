@@ -28,9 +28,50 @@
 }
 
 :root {
+  /* Brand anchors */
   --color-peach: #f6bda7;
   --color-magenta: #9b046f;
   --color-charcoal: #2e2a39;
+
+  /* Surfaces — the fix for the "flat peach wash": a light warm neutral page
+     base, solid white cards on top, and the brand crema for text-heavy areas.
+     Peach is no longer a page background; it lives only in identity moments
+     (the greeting hero gradient). */
+  --surface-app: #f7f2ee;
+  --surface-card: #ffffff;
+  --surface-cream: #faf7f2;
+  --surface-sunk: #efe8e2;
+
+  /* Text */
+  --text-strong: #2e2a39;
+  --text-muted: #726c78;
+
+  /* Magenta support tints (active states, chips) */
+  --magenta-soft: #f4e2ee;
+
+  /* Section accents — soft, purposeful. Warm coral for scanning, a calm
+     teal for the utilitarian care log, sage green for tips. Each has a tint
+     background (for icon chips) and a readable foreground. */
+  --accent-scan-bg: #fde6dc;
+  --accent-scan-fg: #bd5a34;
+  --accent-care-bg: #e0eef0;
+  --accent-care-fg: #2f7d86;
+  --accent-tips-bg: #e6f2ea;
+  --accent-tips-fg: #2f7d4f;
+
+  /* Warm identity gradient — hero/greeting only */
+  --hero-gradient: linear-gradient(135deg, #f9cbb5 0%, #f6a9a0 55%, #ef98ac 100%);
+
+  /* Soft warm-tinted elevation */
+  --shadow-sm: 0 1px 3px rgba(46, 42, 57, 0.06), 0 1px 2px rgba(46, 42, 57, 0.04);
+  --shadow-md: 0 6px 16px rgba(46, 42, 57, 0.08);
+  --shadow-lg: 0 14px 34px rgba(46, 42, 57, 0.13);
+
+  /* Radius scale */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
 
   font-family: 'Poppins', system-ui, sans-serif;
   color-scheme: light;
@@ -45,7 +86,7 @@
 
 body {
   margin: 0;
-  background: var(--color-peach);
+  background: var(--surface-app);
   min-height: 100svh;
 }
 

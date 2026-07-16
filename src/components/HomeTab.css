@@ -1,151 +1,240 @@
 .home-tab {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  align-items: stretch;
+  gap: 16px;
   width: 100%;
   max-width: 480px;
 }
 
-/* Shared with ScanTab/other tabs — kept under the dashboard__ prefix from
-   before the tab split rather than renaming everywhere. */
-.dashboard__pet-switcher {
+/* Pet switcher — polished pills */
+.home-tab__switcher {
   display: flex;
-  gap: 10px;
-  width: 100%;
+  gap: 8px;
   overflow-x: auto;
   padding-bottom: 2px;
 }
 
-.dashboard__pet-switcher-item {
+.home-tab__switcher-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  background: transparent;
-  border: none;
+  gap: 8px;
+  flex-shrink: 0;
+  background: var(--surface-card);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 5px 14px 5px 5px;
   font-family: inherit;
-  font-size: 0.75rem;
-  color: var(--color-charcoal);
-  opacity: 0.55;
-  cursor: pointer;
-  flex-shrink: 0;
-  padding: 4px;
-  border-radius: 12px;
-}
-
-.dashboard__pet-switcher-item.is-active {
-  opacity: 1;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-magenta);
-}
-
-.home-tab__greeting {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.55);
-  border-radius: 24px;
-}
-
-.dashboard__edit-pet-button {
-  margin-left: auto;
-  align-self: flex-start;
-  background: transparent;
-  border: none;
-  color: var(--color-charcoal);
-  opacity: 0.55;
-  font-size: 1.1rem;
+  color: var(--text-muted);
   cursor: pointer;
-  padding: 4px;
-  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
 }
 
-.dashboard__edit-pet-button:hover {
-  opacity: 1;
+.home-tab__switcher-item.is-active {
+  border-color: var(--color-magenta);
   color: var(--color-magenta);
+  background: var(--magenta-soft);
 }
 
-.home-tab__greeting-text {
+/* Hero greeting — the identity/color moment */
+.home-tab__hero {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 10px;
+  padding: 26px 20px 22px;
+  background: var(--hero-gradient);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.home-tab__hero-edit {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--text-strong);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-tab__hero-avatar {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: var(--shadow-sm);
 }
 
 .home-tab__hello {
   margin: 0;
-  font-size: 1.35rem;
-  color: var(--color-magenta);
-  line-height: 1.15;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1.1;
+  text-align: center;
 }
 
-.home-tab__meta {
-  font-size: 0.85rem;
-  color: var(--color-charcoal);
-  opacity: 0.75;
+.home-tab__meta-chip {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-strong);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
   text-transform: capitalize;
 }
 
+/* Highlight cards */
 .home-tab__highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  width: 100%;
+  gap: 12px;
 }
 
 .home-tab__highlight-card {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   align-items: flex-start;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.55);
+  gap: 8px;
+  background: var(--surface-card);
   border: none;
-  border-radius: 16px;
-  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
   cursor: pointer;
   font-family: inherit;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-tab__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.15rem;
+}
+
+.home-tab__chip--scan {
+  background: var(--accent-scan-bg);
+}
+
+.home-tab__chip--care {
+  background: var(--accent-care-bg);
+}
+
+.home-tab__chip--tips {
+  background: var(--accent-tips-bg);
 }
 
 .home-tab__highlight-label {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--color-charcoal);
-  opacity: 0.65;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .home-tab__highlight-value {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-magenta);
+  color: var(--text-strong);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 
-.home-tab__prompt-text {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--color-charcoal);
-  max-width: 360px;
-  text-align: center;
+/* Primary CTA */
+.home-tab__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--color-magenta);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 15px 24px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
 }
 
-.dashboard__footer-links {
+/* Tip teaser — cross-link into Consejos */
+.home-tab__tip-teaser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--surface-card);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-tab__tip-teaser-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.home-tab__tip-teaser-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent-tips-fg);
+  font-weight: 700;
+}
+
+.home-tab__tip-teaser-title {
+  font-size: 0.88rem;
+  color: var(--text-strong);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.home-tab__tip-teaser-arrow {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Footer text links */
+.home-tab__footer-links {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
+  justify-content: center;
+  margin-top: 4px;
 }
 
-.dashboard__edit {
+.home-tab__text-link {
   background: transparent;
   border: none;
-  color: var(--color-charcoal);
-  opacity: 0.6;
+  color: var(--text-muted);
   font-family: inherit;
   font-size: 0.85rem;
   padding: 4px 12px;

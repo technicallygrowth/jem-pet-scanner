@@ -150,7 +150,8 @@
     "noScansYet": "No scans yet",
     "careProgressLabel": "Care log",
     "careProgressValue": "{{count}}/{{total}} logged",
-    "scanNowButton": "Scan now"
+    "scanNowButton": "Scan now",
+    "tipTeaserLabel": "Tip of the day"
   },
   "care": {
     "title": "{{name}}'s care log",

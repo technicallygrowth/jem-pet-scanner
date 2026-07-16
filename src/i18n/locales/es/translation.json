@@ -150,7 +150,8 @@
     "noScansYet": "Todavía no escaneas nada",
     "careProgressLabel": "Bitácora de cuidados",
     "careProgressValue": "{{count}}/{{total}} registrados",
-    "scanNowButton": "Escanear ahora"
+    "scanNowButton": "Escanear ahora",
+    "tipTeaserLabel": "Consejo del día"
   },
   "care": {
     "title": "Bitácora de {{name}}",

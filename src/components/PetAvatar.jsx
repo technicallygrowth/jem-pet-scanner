@@ -46,7 +46,9 @@ const FUR_PALETTES = {
   mixed: { main: '#f7f3ea', earOuter: '#3a3740', earInner: '#242229', catInner: '#5c5860', muzzle: '#ffffff', stripe: '#242229' },
 };
 
-const BACKDROP = { dog: '#ffd98a', cat: '#a3e6cf' };
+// Both warm-family (the mint cat backdrop was the one off-system color) but
+// still distinct at a glance: a warm cream-gold for dogs, a soft blush for cats.
+const BACKDROP = { dog: '#ffe1b8', cat: '#ffd6d2' };
 
 function Eye({ cx, cy, rx, ry, color, highlightR = 5 }) {
   return (
