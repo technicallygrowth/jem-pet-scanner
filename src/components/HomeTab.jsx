@@ -6,6 +6,42 @@ import { CARE_CATEGORIES } from '../data/careCategories';
 import tipsData from '../data/generalTips.json';
 import './HomeTab.css';
 
+// One card per pet in the multi-pet dashboard row. Each pet's care records
+// live under their own localStorage key, so this has to be a real component
+// (not inlined in a .map) — useCareRecords is a hook and needs one call per
+// pet, which is only legal inside its own component instance.
+function PetSummaryCard({ pet, isActive, onSelect }) {
+  const { t } = useTranslation();
+  const { records } = useCareRecords(pet.id);
+  const applicableCategories = CARE_CATEGORIES.filter(
+    (c) => c.key !== 'heat' || pet.sex !== 'male',
+  );
+  const loggedCount = applicableCategories.filter(
+    (c) => records[c.key]?.lastDate || records[c.key]?.neutered,
+  ).length;
+
+  return (
+    <button
+      type="button"
+      className={isActive ? 'home-tab__pet-card is-active' : 'home-tab__pet-card'}
+      onClick={onSelect}
+    >
+      <PetAvatar
+        species={pet.species}
+        size={44}
+        furColor={pet.furColor}
+        eyeColor={pet.eyeColor}
+        collarColor={pet.collarColor}
+        bodyType={pet.bodyType}
+      />
+      <span className="home-tab__pet-card-name">{pet.name}</span>
+      <span className="home-tab__pet-card-care">
+        {t('home.careProgressValue', { count: loggedCount, total: applicableCategories.length })}
+      </span>
+    </button>
+  );
+}
+
 export default function HomeTab({ activePet: pet, petsState, onNavigate, onShowMethodology, onShowAddPet, onShowEditPet }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
@@ -28,29 +64,19 @@ export default function HomeTab({ activePet: pet, petsState, onNavigate, onShowM
   return (
     <div className="home-tab">
       {pets.length > 1 && (
-        <div className="home-tab__switcher">
-          {pets.map((p) => (
-            <button
-              key={p.id}
-              type="button"
-              className={
-                p.id === pet.id
-                  ? 'home-tab__switcher-item is-active'
-                  : 'home-tab__switcher-item'
-              }
-              onClick={() => setActivePetId(p.id)}
-            >
-              <PetAvatar
-                species={p.species}
-                size={36}
-                furColor={p.furColor}
-                eyeColor={p.eyeColor}
-                collarColor={p.collarColor}
+        <section className="home-tab__pets-dashboard">
+          <h3 className="home-tab__pets-dashboard-title">{t('home.yourPetsTitle')}</h3>
+          <div className="home-tab__pets-grid">
+            {pets.map((p) => (
+              <PetSummaryCard
+                key={p.id}
+                pet={p}
+                isActive={p.id === pet.id}
+                onSelect={() => setActivePetId(p.id)}
               />
-              <span>{p.name}</span>
-            </button>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* Identity moment — the one place the warm brand gradient lives. */}

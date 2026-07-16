@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import BottomNav from './BottomNav';
 import Methodology from './Methodology';
 import ProfileCreation from './ProfileCreation';
@@ -11,13 +10,9 @@ import './AppShell.css';
 
 const TAB_COMPONENTS = { home: HomeTab, scan: ScanTab, care: CareTab, tips: TipsTab };
 
-export default function AppShell({ activePet, petsState }) {
-  const [activeTab, setActiveTab] = useState('home');
-  // Full-screen overlays (methodology, add pet, edit pet) take over the
-  // whole shell — including hiding the tab bar — then return to whichever
-  // tab was active before, same pattern the single-view Dashboard used.
-  const [overlay, setOverlay] = useState(null); // null | 'methodology' | 'addPet' | 'editPet'
-
+// activeTab/overlay are owned by App so the header logo can reset both from
+// outside this component (see App.jsx's goHome).
+export default function AppShell({ activePet, petsState, activeTab, setActiveTab, overlay, setOverlay }) {
   const { addPet, updatePet, removePet } = petsState;
 
   function handleAddPet(data) {

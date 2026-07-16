@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#9b046f"/>
-  <path d="M32 12 L48 32 L32 52 L16 32 Z" fill="#f6bda7"/>
+  <defs>
+    <linearGradient id="g" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ee1d5c"/>
+      <stop offset="100%" stop-color="#ffab3d"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3 L61 32 L32 61 L3 32 Z" fill="url(#g)"/>
+  <ellipse cx="32" cy="38" rx="11" ry="9" fill="#fff"/>
+  <ellipse cx="21" cy="27" rx="5.2" ry="6.4" fill="#fff"/>
+  <ellipse cx="32.5" cy="21" rx="5.6" ry="6.8" fill="#fff"/>
+  <ellipse cx="44" cy="27" rx="5.2" ry="6.4" fill="#fff"/>
 </svg>

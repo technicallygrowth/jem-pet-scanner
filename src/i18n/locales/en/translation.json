@@ -160,6 +160,7 @@
     "editPetLink": "Edit"
   },
   "home": {
+    "yourPetsTitle": "Your pets",
     "lastScanLabel": "Last scan",
     "noScansYet": "No scans yet",
     "careProgressLabel": "Care log",

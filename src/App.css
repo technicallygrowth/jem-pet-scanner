@@ -11,6 +11,22 @@
   padding: 20px;
 }
 
+.app__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 4px 6px 4px 4px;
+  margin: -4px -6px -4px -4px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.app__brand:active {
+  background: rgba(46, 42, 57, 0.05);
+}
+
 .app__title {
   font-size: 1.4rem;
   color: var(--color-magenta);

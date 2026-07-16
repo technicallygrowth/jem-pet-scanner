@@ -7,35 +7,64 @@
   max-width: 480px;
 }
 
-/* Pet switcher — polished pills */
-.home-tab__switcher {
+/* Multi-pet dashboard — a card per pet with its own care progress, so all
+   pets' status is visible at a glance instead of just a name switcher. */
+.home-tab__pets-dashboard {
   display: flex;
+  flex-direction: column;
   gap: 8px;
+}
+
+.home-tab__pets-dashboard-title {
+  margin: 0 2px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.home-tab__pets-grid {
+  display: flex;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 2px;
 }
 
-.home-tab__switcher-item {
+.home-tab__pet-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   flex-shrink: 0;
+  width: 92px;
   background: var(--surface-card);
   border: 1.5px solid transparent;
-  border-radius: var(--radius-pill);
-  padding: 5px 14px 5px 5px;
+  border-radius: var(--radius-md);
+  padding: 10px 8px;
   font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-muted);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
 }
 
-.home-tab__switcher-item.is-active {
+.home-tab__pet-card.is-active {
   border-color: var(--color-magenta);
-  color: var(--color-magenta);
   background: var(--magenta-soft);
+}
+
+.home-tab__pet-card-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.home-tab__pet-card-care {
+  font-size: 0.68rem;
+  color: var(--text-muted);
 }
 
 /* Hero greeting — the identity/color moment */
@@ -58,8 +87,10 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   color: var(--text-strong);
   font-size: 1rem;
   cursor: pointer;
@@ -69,10 +100,13 @@
 }
 
 .home-tab__hero-avatar {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   padding: 8px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .home-tab__hello {
@@ -85,7 +119,10 @@
 }
 
 .home-tab__meta-chip {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   color: var(--text-strong);
   font-size: 0.8rem;
   font-weight: 600;

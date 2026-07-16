@@ -160,6 +160,7 @@
     "editPetLink": "Editar"
   },
   "home": {
+    "yourPetsTitle": "Tus mascotas",
     "lastScanLabel": "Último escaneo",
     "noScansYet": "Todavía no escaneas nada",
     "careProgressLabel": "Bitácora de cuidados",
