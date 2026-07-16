@@ -14,7 +14,11 @@ export default function HomeTab({ activePet: pet, petsState, onNavigate, onShowM
   const { records } = useCareRecords(pet.id);
 
   const lastScan = history[0] ?? null;
-  const careLoggedCount = CARE_CATEGORIES.filter(
+  // Heat cycles don't apply to males — don't count that slot at all.
+  const applicableCareCategories = CARE_CATEGORIES.filter(
+    (c) => c.key !== 'heat' || pet.sex !== 'male',
+  );
+  const careLoggedCount = applicableCareCategories.filter(
     (c) => records[c.key]?.lastDate || records[c.key]?.neutered,
   ).length;
   // A rotating teaser would need a stable clock; for the pilot just surface
@@ -96,7 +100,7 @@ export default function HomeTab({ activePet: pet, petsState, onNavigate, onShowM
           <span className="home-tab__chip home-tab__chip--care" aria-hidden="true">🩺</span>
           <span className="home-tab__highlight-label">{t('home.careProgressLabel')}</span>
           <span className="home-tab__highlight-value">
-            {t('home.careProgressValue', { count: careLoggedCount, total: CARE_CATEGORIES.length })}
+            {t('home.careProgressValue', { count: careLoggedCount, total: applicableCareCategories.length })}
           </span>
         </button>
       </div>

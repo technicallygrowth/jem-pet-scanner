@@ -118,6 +118,21 @@
       "green": "Verde",
       "red": "Rojo"
     },
+    "shapeTitle": "¿Qué forma se parece más a {{name}}?",
+    "shapeSubtitle": "Un set de prototipo por ahora — vienen más formas y pelajes que evocan razas reales.",
+    "bodyTypes": {
+      "floppy": "Orejas caídas",
+      "pointy": "Orejas paradas",
+      "fluffy": "Peludo",
+      "shorthair": "Pelo corto",
+      "longhair": "Pelo largo",
+      "fold": "Orejas dobladas"
+    },
+    "sexTitle": "¿{{name}} es macho o hembra?",
+    "sex": {
+      "female": "Hembra",
+      "male": "Macho"
+    },
     "step3Title": "¿Qué edad tiene {{name}}?",
     "puppy": "Cachorro",
     "adult": "Adulto",

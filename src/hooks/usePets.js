@@ -58,6 +58,8 @@ export function usePets() {
         name: next.name.trim(),
         species: next.species,
         lifeStage: next.lifeStage,
+        sex: next.sex ?? null,
+        bodyType: next.bodyType ?? (next.species === 'cat' ? 'shorthair' : 'floppy'),
         furColor: next.furColor ?? 'orange',
         eyeColor: next.eyeColor ?? 'darkBrown',
         collarColor: next.collarColor ?? 'magenta',

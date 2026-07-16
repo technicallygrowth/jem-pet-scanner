@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PetAvatar, { FUR_COLORS, EYE_COLORS, COLLAR_COLORS } from './PetAvatar';
+import PetAvatar, { FUR_COLORS, EYE_COLORS, COLLAR_COLORS, BODY_TYPES } from './PetAvatar';
 import ColorSwatchRow from './ColorSwatchRow';
 import './ProfileCreation.css';
 
@@ -10,22 +10,30 @@ const LIFE_STAGES = [
   { key: 'senior', ageHint: 'seniorAgeHint' },
 ];
 
+const SEXES = ['female', 'male'];
+
+// Steps: 1 species, 2 name, 3 body shape, 4 look (colors), 5 sex,
+// 6 life stage, 7 greeting (not counted in the progress dots).
 export default function ProfileCreation({ onSave, onCancel }) {
   const { t } = useTranslation();
   const [step, setStep] = useState(1);
   const [species, setSpecies] = useState(null);
   const [name, setName] = useState('');
+  const [bodyType, setBodyType] = useState('floppy');
   const [furColor, setFurColor] = useState('orange');
   const [eyeColor, setEyeColor] = useState('darkBrown');
   const [collarColor, setCollarColor] = useState('magenta');
+  const [sex, setSex] = useState(null);
   const [lifeStage, setLifeStage] = useState(null);
 
   const furOptions = FUR_COLORS.map((c) => ({ ...c, label: t(`profile.furColors.${c.key}`) }));
   const eyeOptions = EYE_COLORS.map((c) => ({ ...c, label: t(`profile.eyeColors.${c.key}`) }));
   const collarOptions = COLLAR_COLORS.map((c) => ({ ...c, label: t(`profile.collarColors.${c.key}`) }));
+  const shapeOptions = species ? BODY_TYPES[species] : [];
 
   function chooseSpecies(next) {
     setSpecies(next);
+    setBodyType(BODY_TYPES[next][0]);
     setStep(2);
   }
 
@@ -35,16 +43,21 @@ export default function ProfileCreation({ onSave, onCancel }) {
     setStep(3);
   }
 
+  function chooseSex(next) {
+    setSex(next);
+    setStep(6);
+  }
+
   function chooseLifeStage(next) {
     setLifeStage(next);
-    setStep(5);
+    setStep(7);
   }
 
   function finish() {
-    onSave({ species, name, furColor, eyeColor, collarColor, lifeStage });
+    onSave({ species, name, bodyType, furColor, eyeColor, collarColor, sex, lifeStage });
   }
 
-  const totalSteps = 4;
+  const totalSteps = 6;
   const shownStep = Math.min(step, totalSteps);
 
   return (
@@ -92,7 +105,7 @@ export default function ProfileCreation({ onSave, onCancel }) {
       {step === 2 && (
         <>
           <div className="profile-creation__hero">
-            <PetAvatar species={species} size={140} />
+            <PetAvatar species={species} bodyType={bodyType} size={140} />
           </div>
           <h2 className="profile-creation__title">
             {t(species === 'dog' ? 'profile.step2DogTitle' : 'profile.step2CatTitle')}
@@ -127,9 +140,51 @@ export default function ProfileCreation({ onSave, onCancel }) {
 
       {step === 3 && (
         <>
+          <h2 className="profile-creation__title">{t('profile.shapeTitle', { name })}</h2>
+          <p className="profile-creation__subtitle">{t('profile.shapeSubtitle')}</p>
+          <div className="profile-creation__shape-grid">
+            {shapeOptions.map((shape) => (
+              <button
+                key={shape}
+                type="button"
+                className={
+                  bodyType === shape
+                    ? 'profile-creation__species-card is-selected'
+                    : 'profile-creation__species-card'
+                }
+                onClick={() => setBodyType(shape)}
+              >
+                <PetAvatar
+                  species={species}
+                  bodyType={shape}
+                  size={110}
+                  furColor={furColor}
+                  eyeColor={eyeColor}
+                  collarColor={collarColor}
+                />
+                <span>{t(`profile.bodyTypes.${shape}`)}</span>
+              </button>
+            ))}
+          </div>
+          <button type="button" className="scanner__primary-button" onClick={() => setStep(4)}>
+            {t('profile.continueButton')}
+          </button>
+          <button
+            type="button"
+            className="profile-creation__back"
+            onClick={() => setStep(2)}
+          >
+            {t('profile.backButton')}
+          </button>
+        </>
+      )}
+
+      {step === 4 && (
+        <>
           <div className="profile-creation__hero">
             <PetAvatar
               species={species}
+              bodyType={bodyType}
               size={150}
               furColor={furColor}
               eyeColor={eyeColor}
@@ -158,24 +213,60 @@ export default function ProfileCreation({ onSave, onCancel }) {
             onChange={setCollarColor}
           />
 
-          <button type="button" className="scanner__primary-button" onClick={() => setStep(4)}>
+          <button type="button" className="scanner__primary-button" onClick={() => setStep(5)}>
             {t('profile.continueButton')}
           </button>
           <button
             type="button"
             className="profile-creation__back"
-            onClick={() => setStep(2)}
+            onClick={() => setStep(3)}
           >
             {t('profile.backButton')}
           </button>
         </>
       )}
 
-      {step === 4 && (
+      {step === 5 && (
         <>
           <div className="profile-creation__hero">
             <PetAvatar
               species={species}
+              bodyType={bodyType}
+              size={140}
+              furColor={furColor}
+              eyeColor={eyeColor}
+              collarColor={collarColor}
+            />
+          </div>
+          <h2 className="profile-creation__title">{t('profile.sexTitle', { name })}</h2>
+          <div className="profile-creation__stage-list">
+            {SEXES.map((s) => (
+              <button
+                key={s}
+                type="button"
+                className="profile-creation__stage-card"
+                onClick={() => chooseSex(s)}
+              >
+                <span className="profile-creation__stage-label">{t(`profile.sex.${s}`)}</span>
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="profile-creation__back"
+            onClick={() => setStep(4)}
+          >
+            {t('profile.backButton')}
+          </button>
+        </>
+      )}
+
+      {step === 6 && (
+        <>
+          <div className="profile-creation__hero">
+            <PetAvatar
+              species={species}
+              bodyType={bodyType}
               size={140}
               furColor={furColor}
               eyeColor={eyeColor}
@@ -205,18 +296,19 @@ export default function ProfileCreation({ onSave, onCancel }) {
           <button
             type="button"
             className="profile-creation__back"
-            onClick={() => setStep(3)}
+            onClick={() => setStep(5)}
           >
             {t('profile.backButton')}
           </button>
         </>
       )}
 
-      {step === 5 && (
+      {step === 7 && (
         <>
           <div className="profile-creation__hero">
             <PetAvatar
               species={species}
+              bodyType={bodyType}
               size={180}
               furColor={furColor}
               eyeColor={eyeColor}
@@ -237,7 +329,7 @@ export default function ProfileCreation({ onSave, onCancel }) {
           <button
             type="button"
             className="profile-creation__back"
-            onClick={() => setStep(4)}
+            onClick={() => setStep(6)}
           >
             {t('profile.backButton')}
           </button>

@@ -14,13 +14,19 @@ export default function CareTab({ activePet: pet }) {
     setExpandedKey((current) => (current === key ? null : key));
   }
 
+  // Heat cycles only apply to females — no point showing a field that can
+  // never mean anything for a male pet.
+  const visibleCategories = CARE_CATEGORIES.filter(
+    (c) => c.key !== 'heat' || pet.sex !== 'male',
+  );
+
   return (
     <div className="care-tab">
       <h2 className="care-tab__title">{t('care.title', { name: pet.name })}</h2>
       <p className="care-tab__intro">{t('care.intro')}</p>
 
       <div className="care-tab__list">
-        {CARE_CATEGORIES.map((category) => {
+        {visibleCategories.map((category) => {
           const record = records[category.key] ?? {};
           const isExpanded = expandedKey === category.key;
           const isNeutered = category.hasNeuteredToggle && record.neutered;

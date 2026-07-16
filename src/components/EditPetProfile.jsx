@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PetAvatar, { FUR_COLORS, EYE_COLORS, COLLAR_COLORS } from './PetAvatar';
+import PetAvatar, { FUR_COLORS, EYE_COLORS, COLLAR_COLORS, BODY_TYPES } from './PetAvatar';
 import ColorSwatchRow from './ColorSwatchRow';
 import './ProfileCreation.css';
 
@@ -10,23 +10,32 @@ const LIFE_STAGES = [
   { key: 'senior', ageHint: 'seniorAgeHint' },
 ];
 
+const SEXES = ['female', 'male'];
+
 export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
   const { t } = useTranslation();
   const [species, setSpecies] = useState(pet.species);
   const [name, setName] = useState(pet.name);
+  const [bodyType, setBodyType] = useState(pet.bodyType ?? (pet.species === 'cat' ? 'shorthair' : 'floppy'));
   const [furColor, setFurColor] = useState(pet.furColor ?? 'orange');
   const [eyeColor, setEyeColor] = useState(pet.eyeColor ?? 'darkBrown');
   const [collarColor, setCollarColor] = useState(pet.collarColor ?? 'magenta');
+  const [sex, setSex] = useState(pet.sex ?? null);
   const [lifeStage, setLifeStage] = useState(pet.lifeStage);
 
   const furOptions = FUR_COLORS.map((c) => ({ ...c, label: t(`profile.furColors.${c.key}`) }));
   const eyeOptions = EYE_COLORS.map((c) => ({ ...c, label: t(`profile.eyeColors.${c.key}`) }));
   const collarOptions = COLLAR_COLORS.map((c) => ({ ...c, label: t(`profile.collarColors.${c.key}`) }));
 
+  function chooseSpecies(next) {
+    setSpecies(next);
+    setBodyType(BODY_TYPES[next][0]);
+  }
+
   function submit(event) {
     event.preventDefault();
     if (!name.trim()) return;
-    onSave({ species, name, furColor, eyeColor, collarColor, lifeStage });
+    onSave({ species, name, bodyType, furColor, eyeColor, collarColor, sex, lifeStage });
   }
 
   function confirmDelete() {
@@ -42,6 +51,7 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
       <div className="profile-creation__hero">
         <PetAvatar
           species={species}
+          bodyType={bodyType}
           size={140}
           furColor={furColor}
           eyeColor={eyeColor}
@@ -57,7 +67,7 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
               ? 'profile-creation__species-card is-selected'
               : 'profile-creation__species-card'
           }
-          onClick={() => setSpecies('dog')}
+          onClick={() => chooseSpecies('dog')}
         >
           <span>{t('profile.dog')}</span>
         </button>
@@ -68,7 +78,7 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
               ? 'profile-creation__species-card is-selected'
               : 'profile-creation__species-card'
           }
-          onClick={() => setSpecies('cat')}
+          onClick={() => chooseSpecies('cat')}
         >
           <span>{t('profile.cat')}</span>
         </button>
@@ -82,6 +92,31 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
         placeholder={t('profile.namePlaceholder')}
         maxLength={30}
       />
+
+      <div className="profile-creation__shape-grid">
+        {BODY_TYPES[species].map((shape) => (
+          <button
+            key={shape}
+            type="button"
+            className={
+              bodyType === shape
+                ? 'profile-creation__species-card is-selected'
+                : 'profile-creation__species-card'
+            }
+            onClick={() => setBodyType(shape)}
+          >
+            <PetAvatar
+              species={species}
+              bodyType={shape}
+              size={90}
+              furColor={furColor}
+              eyeColor={eyeColor}
+              collarColor={collarColor}
+            />
+            <span>{t(`profile.bodyTypes.${shape}`)}</span>
+          </button>
+        ))}
+      </div>
 
       <ColorSwatchRow
         label={t('profile.furColorLabel')}
@@ -101,6 +136,21 @@ export default function EditPetProfile({ pet, onSave, onCancel, onDelete }) {
         value={collarColor}
         onChange={setCollarColor}
       />
+
+      <div className="profile-creation__species-grid">
+        {SEXES.map((s) => (
+          <button
+            key={s}
+            type="button"
+            className={
+              sex === s ? 'profile-creation__species-card is-selected' : 'profile-creation__species-card'
+            }
+            onClick={() => setSex(s)}
+          >
+            <span>{t(`profile.sex.${s}`)}</span>
+          </button>
+        ))}
+      </div>
 
       <div className="profile-creation__stage-list">
         {LIFE_STAGES.map((stage) => (
